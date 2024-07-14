@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        <!-- Title and Icon -->
+
+        <title id="landingTitl">EduOcean</title>
+        <link id="shortcutIcon" rel="shortcut icon" href="../images/logo.svg" />
+        <link id="appleTouchIcon" rel="apple-touch-icon" href="../images/logo.svg" />
+
+        <!-- Meta Information -->
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+            name="description"
+            content=" by WebRTC, Real-time Simple Secure Fast video calls, chat and screen sharing capabilities in the browser, from your mobile or desktop."
+        />
+        <meta
+            name="keywords"
+            content="webrtc, self hosted, voip, sip, real-time communications, chat, messaging, meet, webrtc stun, webrtc turn, video meeting, video chat, video conference, multi video chat, multi video conference, peer to peer, p2p, rtc, alternative to, zoom, microsoft teams, google meet, jitsi, meeting"
+        />
+
+        <!-- https://ogp.me -->
+
+        <meta property="og:type" content="app-webrtc" />
+        <meta property="og:site_name" content="MiroTalk" />
+        <meta property="og:title" content="Click the link to make a call." />
+        <meta
+            property="og:description"
+            content="MiroTalk calling provides real-time HD quality and latency simply not available with traditional technology."
+        />
+        <meta property="og:image" content="https://p2p.mirotalk.com/images/preview.g" />
+        <meta property="og:url" content="https://p2p.mirotalk.com" />
+
+        <!-- xss -->
+
+        <script src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>
+
+        <!-- https://cdnjs.com/libraries/font-awesome -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+        <!-- StyleSheet -->
+
+        <link rel="stylesheet" href="../css/landing.css" />
+        <link rel="stylesheet" href="../css/newcall.css" />
+
+        <!-- Snow effects -->
+
+        <link rel="stylesheet" href="../css/snow.css" />
+        <script defer src="../js/snow.js"></script>
+
+        <!-- JavaScripts -->
+
+        <script async src="../js/umami.js"></script>
+    </head>
+    <body class="has-animations" id="home">
+        <div id="snow-container"></div>
+        <div class="body-wrap">
+            <header class="site-header reveal-from-top">
+                <div class="container">
+                    <div class="site-header-inner">
+                        <div class="brand">
+                            <div class="m-0">
+                                <a href="/">
+                                    <img src="../images/logo.svg" alt="MiroTalk P2P" width="32" height="32" />
+                                    <!-- <img
+                                        src="../images/mirotalk-mc.png"
+                                        alt="MiroTalk P2P"
+                                        width="96"
+                                        height="auto"
+                                        style="margin-top: 80px"
+                                    /> -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <nav class="site-navigation">
+                <ul class="list-reset">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#course">Course</a></li>
+                    <li><a href="#assessments">Assessments</a></li>
+                    <li><a href="#tryEasier">Try Now</a></li>
+                    <li><a href="#poweredBy">Powered By</a></li>
+                </ul>
+            </nav>
+
+            <main class="site-content">
+                <section class="hero section illustration-section-01">
+                    <div class="container">
+                        <div class="hero-inner section-inner">
+                            <div class="split-wrap invert-mobile">
+                                <div class="split-item">
+                                    <div class="hero-content split-item-content center-content-mobile">
+                                        <h1
+                                            id="appTite"
+                                            class="mt-12 mb-36 reveal-from-bottom"
+                                            data-reveal-delay="150"
+                                        >
+                                            ASHi<br /> Welcome to EduOcean.
+                                        </h1>
+                                        <p
+                                            id="apDescription"
+                                            class="mt-0 mb-32 reveal-from-bottom"
+                                            data-reveal-delay="300"
+                                        >
+                                         Mastering any subject is effortless. Enjoy live streaming classes, interactive assessments, a vast library of course videos, and engaging tools like screen sharing and whiteboards. Get dedicated support to excel in your learning journey and become the best in your field.
+                                    </p>
+                                    </div>
+                                    <style>
+                                        @media (min-width: 341px) {
+                                            .hero .split-wrap .split-item {
+                                                min-height: 392px;
+                                            }
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section  class="cta section center-content-mobile reveal-from-bottom mb-32">
+                    <div class="container">
+                        <div class="cta-inner section-inner cta-split br-12">
+                            <div class="cta-slogan">
+                                <h3 class="m-0">
+                                    Pick a room name.<br />
+                                    How about this one?
+                                </h3>
+                            </div>
+                            <div class="cta-action">
+                                <div class="mb-0">
+                                    <label class="form-label screen-reader" for="roomName">MiroTalk-P2P</label>
+                                    <div class="form-group-desktop">
+                                        <input
+                                            id="roomName"
+                                            class="form-input"
+                                            type="text"
+                                            value="mirotalk"
+                                            maxlength="32"
+                                        />
+                                        <button
+                                            id="genRoomButton"
+                                            class="button button-primary br-6 mr-8 mb-8 fas fa-arrows-rotate"
+                                        ></button>
+                                        <button id="joinRoomButton" class="button button-primary br-6 pulse">
+                                            join ts  Room
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="lastRoomContainer" class="last-room">
+                                    <span>Your recent room:</span>
+                                    <a id="lastRoom"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="course" class="course-section center-content mt-32">
+                    <div class="container">
+                        <div class="course-section-inner has-top-divider">
+                            <div class="section-header">
+                                <div class="container-xs reveal-from-bottom" data-reveal-delay="650">
+                                    <h2 class="mt-0 mb-16">
+                                        Master every subject from basics to advanced with our comprehensive courses and interactive learning tools.
+                                    </h2>
+                                    <p class="m-0">BEST COURSE PROGRAMME</p>
+                                </div>
+                            </div>
+                            <div class="course-grid">
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://tse1.mm.bing.net/th?id=OIP.6Me54BEZ5TsTJ3kcFchfbwHaEK&pid=Api&P=0&h=180" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>     
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://pixel2pixeldesign.com/wp-content/uploads/2018/09/606096_3182.jpg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.freecodecamp.org/news/content/images/2021/06/javascriptfull.png" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://reconshell.com/wp-content/uploads/2021/06/typescript-768x424.jpeg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.freecodecamp.org/news/content/images/2022/02/Banner-10.png" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://media.geeksforgeeks.org/wp-content/uploads/20230629123647/Best-C-Programming-Courses-For-Beginners.png" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>       
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://media.geeksforgeeks.org/wp-content/uploads/20230629144356/Best-CPP-Courses-with-Certificates.png" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.interviewbit.com/blog/wp-content/uploads/2023/05/Artboard-1-copy-800x450.jpg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.classcentral.com/report/wp-content/uploads/2022/08/BCG-Kotlint-Featured-Banner.png" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.cromacampus.com/public/uploads/Blog/2022/09/week_1/Best-AWS-Courses-Big.jpg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.sipexe.com/assets/courses/docker.jpg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://i.morioh.com/2023/09/29/e7932a09.webp" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://i.ytimg.com/vi/piq-x7uFqzY/maxresdefault.jpg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://tse1.mm.bing.net/th?id=OIP.XG0pRkzBeIIummNtkPionAAAAA&pid=Api&P=0&h=180" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.learnerzhub.com/wp-content/uploads/2021/07/Best-Cyber-Security-Courses-Online.png" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>     
+                                <div class="course-item reveal-from-right">
+                                    <div class="course-item-inner">
+                                        <div class="course-item-header">
+                                            <div class="course-item-image mb-16">
+                                                <img class="course-image" src="https://www.analyticssteps.com/backend/media/thumbnail/3865873/9279488_1621332362_Top%20A.IArtboard%201.jpg" alt="Screen Sharing" />
+                                            </div>
+                                        </div>
+                                        <div class="course-item-content">
+                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <p class="m-0 text-sm">
+                                                Discover the best courses designed to elevate your skills from basics to advanced levels
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>                                                            
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="assessments" class="assessments-section section center-content">
+                    <div class="container">
+                        <div class="assessments-inner section-inner has-top-divider">
+                            <div class="section-header center-content reveal-from-bottom">
+                                <div class="container-xs">
+                                    <h2 class="mt-0 mb-16">Take Assessments</h2>
+                                </div>
+                            </div>
+                            <div class="cards-wrap">
+                                <div class="card-item reveal-from-bottom">
+                                    <div class="card-item-inner">
+                                        <div class="card-item-image mb-24">
+                                            <img
+                                                src="https://tse4.mm.bing.net/th?id=OIP.vHHBwcUFUaHWXntSnqKdCAAAAA&pid=Api&P=0&h=180"
+                                                alt="Assessment"
+                                                width="auto"
+                                                height="auto"
+                                            />
+                                        </div>
+                                        <div class="card-item-content">
+                                            <h5 class="card-item-name mt-0 mb-4">
+                                                Assessment Title
+                                            </h5>
+                                            <p class="card-item-description">
+                                                Description of the assessment goes here. Click to start!
+                                            </p>
+                                            <a href="#" class="card-item-link">Start Assessment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-item reveal-from-bottom">
+                                    <div class="card-item-inner">
+                                        <div class="card-item-image mb-24">
+                                            <img
+                                                src="https://tse1.mm.bing.net/th?id=OIP.aqk7aOsCh5urrV00hAbbEQHaEc&pid=Api&P=0&h=180"
+                                                alt="Assessment"
+                                                width="auto"
+                                                height="auto"
+                                            />
+                                        </div>
+                                        <div class="card-item-content">
+                                            <h5 class="card-item-name mt-0 mb-4">
+                                                Assessment Title
+                                            </h5>
+                                            <p class="card-item-description">
+                                                Description of the assessment goes here. Click to start!
+                                            </p>
+                                            <a href="#" class="card-item-link">Start Assessment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-item reveal-from-bottom">
+                                    <div class="card-item-inner">
+                                        <div class="card-item-image mb-24">
+                                            <img
+                                                src="https://i.ytimg.com/vi/qKGS3l0aXhw/maxresdefault.jpg"
+                                                alt="Assessment"
+                                                width="auto"
+                                                height="auto"
+                                            />
+                                        </div>
+                                        <div class="card-item-content">
+                                            <h5 class="card-item-name mt-0 mb-4">
+                                                Assessment Title
+                                            </h5>
+                                            <p class="card-item-description">
+                                                Description of the assessment goes here. Click to start!
+                                            </p>
+                                            <a href="#" class="card-item-link">Start Assessment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Additional card items can be added here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tryEasier" class="section">
+                    <div class="container">
+                        <div class="section-inner has-top-divider">
+                            <div class="container-xs">
+                                <div class="section-header center-content">
+                                    <h2 class="m-0">Try an easier, more secure way of calling.</h2>
+                                </div>
+                                <div class="center-content">
+                                    <a class="button button-custom button-wide-mobile br-6 pulse" href="/newcall"
+                                        >Try now</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="poweredBy" class="clients section">
+                    <div class="container">
+                        <h4 class="mt-24 powered-by">Powered by</h4>
+                        <div class="clients-inner section-inner has-animations has-top-divider has-bottom-divider">
+                            <ul class="list-reset">
+                                <li class="reveal-from-top" data-reveal-delay="150">
+                                    <a href="https://hetzner.cloud/?ref=XdRifCzCK3bn" target="_blank"
+                                        ><img
+                                            class="clients-size-logo"
+                                            src="../sponsors/Hetzner.png"
+                                            alt="Powered by Hetzner"
+                                    /></a>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="300">
+                                    <a href="https://www.dpbolvw.net/click-101027391-14462707" target="_blank"
+                                        ><img
+                                            class="clients-size-logo"
+                                            src="../advertisers/ContaboLogo.png"
+                                            alt="Powered by Contabo"
+                                    /></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sponsors" class="clients section">
+                    <div class="container">
+                        <h2 class="mt-24 tac">Our sponsors</h2>
+                        <div class="clients-inner section-inner has-animations has-top-divider has-bottom-divider">
+                            <ul class="list-reset">
+                                <li class="reveal-from-top" data-reveal-delay="150">
+                                    <div class="clients-logo">
+                                        <a href="https://broadcastx.de/" target="_blank"
+                                            ><img
+                                                class="clients-size-logo"
+                                                src="../sponsors/BroadcastX.png"
+                                                alt="BroadcastX"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="300">
+                                    <div class="clients-logo">
+                                        <a href="https://hetzner.cloud/?ref=XdRifCzCK3bn" target="_blank"
+                                            ><img class="clients-size-logo" src="../sponsors/Hetzner.png" alt="Hetzner"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="450">
+                                    <div class="clients-logo">
+                                        <a id="adultCnt" class="cp"
+                                            ><img
+                                                class="clients-size-logo"
+                                                src="../sponsors/LuvLounge.png"
+                                                alt="LuvLounge"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="600">
+                                    <div class="clients-logo">
+                                        <a href="https://www.questionpro.com" target="_blank"
+                                            ><img
+                                                class="clients-size-logo"
+                                                src="../sponsors/QuestionPro.png"
+                                                alt="QuestionPro"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="750">
+                                    <div class="clients-logo">
+                                        <a href="https://www.browserstack.com" target="_blank"
+                                            ><img
+                                                class="clients-size-logo"
+                                                src="../sponsors/BrowserStack.png"
+                                                alt="BrowserStack"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="900">
+                                    <div class="clients-logo">
+                                        <a href="https://crystalsound.ai" target="_blank"
+                                            ><img
+                                                class="clients-size-logo"
+                                                src="../sponsors/CrystalSound.png"
+                                                alt="CrystalSound"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="1050">
+                                    <div class="clients-logo">
+                                        <a href="https://cloudron.io" target="_blank"
+                                            ><img
+                                                class="clients-size-logo"
+                                                src="../sponsors/Cloudron.png"
+                                                alt="Cloudron"
+                                        /></a>
+                                    </div>
+                                </li>
+                                <li class="reveal-from-top" data-reveal-delay="1050">
+                                    <div class="clients-logo">
+                                        <a href="https://kiquix.com" target="_blank"
+                                            ><img class="clients-size-logo" src="../sponsors/Kiquix.png" alt="Kiquix"
+                                        /></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+               
+            </main>
+
+            <footer id="footer" class="site-footer center-content-mobile">
+                <div class="container">
+                    <div class="site-footer-inner">
+                        <div class="footer-top space-between text-xxs">
+                            <div class="brand">
+                                <a href="/"><img src="../images/logo.sv" alt="Neon" width="32" height="32" /></a>
+                            </div>
+                            <div class="footer-social">
+                                <ul class="list-reset">
+                                   
+                                    
+                                    <li class="footer-social-icon">
+                                        <a target="_blank" href="mailto:aashishaik526@gmail.com">
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 16 16"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <title>Email</title>
+                                                <path
+                                                    d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
+                                                    fill="#0270D7"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                   
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom space-between text-xxs invert-order-desktop">
+                            <nav class="footer-nav">
+                                <ul class="list-reset">
+                                    <li>
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="/privacy">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.linkedin.com/in/ashi-sk/"
+                                            >Contact: SK Ashi</a
+                                        >
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="footer-copyright">&copy; 2024 Aashi all rights reserved</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script defer src="../js/brand.js"></script>
+        <script defer src="../js/landing.js"></script>
+        <script defer src="../js/common.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </body>
+</html>
