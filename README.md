@@ -1,4 +1,4 @@
-Our LMS platform offers comprehensive online courses with live streaming classes, interactive chat, screen sharing, whiteboard, and camera/mic toggle. It includes advanced video speech functionality, customizable themes, a wide range of courses from basics to advanced levels, assessments with certificates, a student help community, and recorded live classes accessible anytime.
+Our LMS platform offers comprehensive online courses with live streaming classes, interactive chat, screen sharing, whiteboard, and camera/mic toggle, customizable themes, a wide range of courses from basics to advanced levels, assessments with certificates, a student help community, and recorded live classes accessible anytime.
 
 
 ## Features
