@@ -3,8 +3,7 @@ import Header from '../components/Header'
 import Body from '../components/Body';
 import NewBody from '../components/NewBody';
 import PriceBody from '../components/PriceBody';
-import Footer from '../components/Footer';
-
+import MainFooter from '../components/MainFooter';
 function LandingPage() {
   return (
     <>
@@ -20,7 +19,7 @@ function LandingPage() {
           <PriceBody />
         </BodyContainer>
       </body>
-      <Footer />
+      <MainFooter />
     </>
   );
 }

@@ -47,7 +47,7 @@ export default function Header() {
 			</Nav>
 			<FlexContainer bcg>
 				<div>
-					<h3>100% SATISFACTION GUARANTEE</h3>
+					<h3 className=" text-black">100% SATISFACTION GUARANTEE</h3>
 
 					<h1>Test your skills digitally from the comfort of your home.</h1>
 					<p>

@@ -59,7 +59,7 @@ export const FlexContainer = styled.div`
 	}
 
 	h3 {
-		color: #ffd05a;
+		color: #000000;
 		font-size: 16px;
 		margin-top: 10px;
 	}

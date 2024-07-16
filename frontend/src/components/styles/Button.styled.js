@@ -25,8 +25,8 @@ export const GetButton = styled.button`
     font-weight: 700;
     padding: 15px 30px;
     margin: 10px;
-    background-color: ${({ bg }) => bg || '#FFD05A'};
-    color: ${({ color }) => color || '#000'};
+    background-color: ${({ bg }) => bg || '#000000'};
+    color: ${({ color }) => color || '#f0f0f0'};
 
     &:hover {
         opacity: 0.9;
