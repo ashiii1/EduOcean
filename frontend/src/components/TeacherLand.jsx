@@ -30,7 +30,8 @@ const TeacherLand = () => {
 
   useEffect(() => {
     fetchTeacherData();
-  }, [teacherId]);
+    
+  },[teacherId]);
 
   const navigate = useNavigate();
 

@@ -32,27 +32,27 @@ const SignInStudent = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-zinc-900 p-6">
-      <div className="card shadow-2xl h-1/2 md:w-1/2 xl:w-1/3 bg-zinc-800 rounded-md">
+    <div className="flex items-center justify-center min-h-screen bg-white p-6">
+      <div className="card shadow-2xl h-1/2 md:w-1/2 xl:w-1/3 bg-white rounded-md">
         <div className="form-container p-6">
-          <h2 className="text-white text-xl mb-8">Signin As Student</h2>
+          <h2 className="text-black text-xl mb-8">Login</h2>
           <form onSubmit={handleSignin}>
             <input
-              className="w-full xl:h-10 md:h-8 rounded-md p-4 mb-5 bg-zinc-600 text-white"
+              className="w-full xl:h-10 md:h-8 rounded-md p-4 mb-5 bg-zinc-200 text-black"
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
-              className="w-full xl:h-10 md:h-8 rounded-md p-4 mb-5 bg-zinc-600 text-white"
+              className="w-full xl:h-10 md:h-8 rounded-md p-4 mb-5 bg-zinc-200 text-black"
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <button
-              className="bg-orange-500 text-white hover:bg-orange-700 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-64"
+              className="bg-green-600 text-black hover:bg-green-800 hover:text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-64"
               type="submit" // Use type="submit" for the form submission
             >
               Sign In
