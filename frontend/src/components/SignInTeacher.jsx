@@ -114,7 +114,7 @@ const SignInTeacher = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-zinc-900 p-6 w-full">
+    <div className="flex items-center justify-center min-h-screen bg-zinc-900l p-6 w-full">
       <div className="card shadow-2xl h-1/2 md:w-1/2 xl:w-1/3 bg-zinc-800 rounded-md">
         <div className="form-container p-6">
           <h2 className="text-white text-xl mb-8">Signin As Instructor</h2>

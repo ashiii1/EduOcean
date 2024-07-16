@@ -3,8 +3,8 @@ import {
 	Nav,
 	Rightcontainer,
 	Menu,
-	MenuLink,
-	Image,
+	
+	
 	Logo,
 } from "./styles/Header.styled";
 import MainNavbar from "./MainNavbar";
@@ -19,8 +19,8 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-
-		<Styledheader>
+<div>
+		{/* // <Styledheader> */}
 		<MainNavbar/>
 			<Nav>
 				<Logo>
@@ -36,10 +36,7 @@ export default function Header() {
 					<span></span>
 				</Rightcontainer>
 				<Menu isOpen={isOpen}>
-					<MenuLink href="">Home</MenuLink>
-					<MenuLink href="">Features</MenuLink>
-					<MenuLink href="">Pricing</MenuLink>
-					<MenuLink href="">Contact Us</MenuLink>
+					
 					<Link to={"/login"}>
 						<Button>Login</Button>
 					</Link>
@@ -59,10 +56,11 @@ export default function Header() {
 					</Link>
 				</div>
 
-				<span>
+				{/* <span>
 					<Image src="./images/Hero image.svg" alt="hero" />
-				</span>
+				</span> */}
 			</FlexContainer>
-		</Styledheader>
+		{/* // </Styledheader> */}
+		</div>
 	);
 }

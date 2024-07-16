@@ -4,7 +4,7 @@ export const StyledLoginCard = styled.div`
 	height: fit-content;
 	max-width: 400px;
 	border-radius: 20px;
-	background-color: #ffd05a33;
+	background-color: #90EE90;
 	padding: 30px;
 	text-align: center;
 	margin-bottom: 20px;

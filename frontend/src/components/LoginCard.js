@@ -56,8 +56,8 @@ export const LoginCard = () => {
 					<h2>Please Wait</h2>
 				</div>
 			) : (
-				<StyledLoginCard>
-					<h1> Let's sign you in!</h1>
+				<StyledLoginCard className="bg-black text-black">
+					<h1 > Let's sign you in!</h1>
 					<p>
 						If you don't have an account, a new account will be created based on
 						your Google account info
@@ -65,8 +65,8 @@ export const LoginCard = () => {
 					<div id="signInDiv"></div>
 					<StyledButton
 						onClick={demoLoginHandler}
-						fontclr="#343E3D"
-						color="#fff"
+						fontclr="#90EE90"
+						color="#000000"
 						wd="250px"
 						login
 					>
