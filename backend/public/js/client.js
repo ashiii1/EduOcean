@@ -142,7 +142,7 @@ const buttons = {
         showFileShareBtn: true,
         showDocumentPipBtn: showDocumentPipBtn,
         showMySettingsBtn: true,
-        showAboutBtn: true, // Please keep me always true, Thank you!
+        // showAboutBtn: true, // Please keep me always true, Thank you!
     },
     chat: {
         showMaxBtn: true,
@@ -849,7 +849,7 @@ function refreshMainButtonsToolTipPlacement() {
     setTippy(fileShareBtn, 'Share file', placement);
     setTippy(documentPiPBtn, 'Toggle picture in picture', placement);
     setTippy(mySettingsBtn, 'Open the settings', placement);
-    setTippy(aboutBtn, 'About this project', placement);
+    // setTippy(aboutBtn, 'About this project', placement);
     setTippy(leaveRoomBtn, 'Leave this room', placement);
 }
 
@@ -10039,50 +10039,50 @@ function handleKickedOut(config) {
 
 /**
  * MiroTalk about info
- */
-function showAbout() {
-    playSound('newMessage');
+//  */
+// function showAbout() {
+//     playSound('newMessage');
 
-    Swal.fire({
-        background: swBg,
-        position: 'center',
-        title: '<strong>WebRTC P2P v1.3.46</strong>',
-        imageAlt: 'mirotalk-about',
-        imageUrl: images.about,
-        customClass: { image: 'img-about' },
-        html: `
-        <br/>
-        <div id="about">
-            <button 
-                id="support-button" 
-                data-umami-event="Support button" 
-                onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
-                <i class="${className.heart}" ></i>&nbsp;Support
-            </button>
-            <br /><br /><br />
-            Author:<a 
-                id="linkedin-button" 
-                data-umami-event="Linkedin button" 
-                href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" target="_blank"> 
-                Miroslav Pejic
-            </a>
-            <br /><br />
-            Email:<a 
-                id="email-button" 
-                data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
-                miroslav.pejic.85@gmail.com
-            </a>
-            <br /><br />
-            <hr />
-            <span>&copy; 2024 MiroTalk P2P, all rights reserved</span>
-            <hr />
-        </div>
-        `,
-        showClass: { popup: 'animate__animated animate__fadeInDown' },
-        hideClass: { popup: 'animate__animated animate__fadeOutUp' },
-    });
-}
+//     Swal.fire({
+//         background: swBg,
+//         position: 'center',
+//         title: '<strong>WebRTC P2P v1.3.46</strong>',
+//         imageAlt: 'mirotalk-about',
+//         imageUrl: images.about,
+//         customClass: { image: 'img-about' },
+//         html: `
+//         <br/>
+//         <div id="about">
+//             <button 
+//                 id="support-button" 
+//                 data-umami-event="Support button" 
+//                 onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
+//                 <i class="${className.heart}" ></i>&nbsp;Support
+//             </button>
+//             <br /><br /><br />
+//             Author:<a 
+//                 id="linkedin-button" 
+//                 data-umami-event="Linkedin button" 
+//                 href="https://www.linkedin.com/in/miroslav-pejic-976a07101/" target="_blank"> 
+//                 Miroslav Pejic
+//             </a>
+//             <br /><br />
+//             Email:<a 
+//                 id="email-button" 
+//                 data-umami-event="Email button" 
+//                 href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
+//                 miroslav.pejic.85@gmail.com
+//             </a>
+//             <br /><br />
+//             <hr />
+//             <span>&copy; 2024 MiroTalk P2P, all rights reserved</span>
+//             <hr />
+//         </div>
+//         `,
+//         showClass: { popup: 'animate__animated animate__fadeInDown' },
+//         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
+//     });
+// }
 
 /**
  * Leave the Room and create a new one
@@ -10107,7 +10107,7 @@ function leaveFeedback() {
         background: swBg,
         imageUrl: images.feedback,
         title: 'Leave a feedback',
-        text: 'Do you want to rate your MiroTalk experience?',
+        text: 'Do you want to feedback to the instructor',
         confirmButtonText: `Yes`,
         denyButtonText: `No`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },
