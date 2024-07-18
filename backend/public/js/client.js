@@ -140,7 +140,7 @@ const buttons = {
         showFileShareBtn: true,
         showDocumentPipBtn: showDocumentPipBtn,
         showMySettingsBtn: true,
-        showAboutBtn: true, // Please keep me always true, Thank you!
+        // showAboutBtn: true, // Please keep me always true, Thank you!
     },
     chat: {
         showMaxBtn: true,
@@ -227,7 +227,7 @@ const whiteboardBtn = getId('whiteboardBtn');
 const fileShareBtn = getId('fileShareBtn');
 const documentPiPBtn = getId('documentPiPBtn');
 const mySettingsBtn = getId('mySettingsBtn');
-const aboutBtn = getId('aboutBtn');
+// const aboutBtn = getId('aboutBtn');
 const leaveRoomBtn = getId('leaveRoomBtn');
 
 // Room Emoji Picker
@@ -847,7 +847,7 @@ function refreshMainButtonsToolTipPlacement() {
     setTippy(fileShareBtn, 'Share file', placement);
     setTippy(documentPiPBtn, 'Toggle picture in picture', placement);
     setTippy(mySettingsBtn, 'Open the settings', placement);
-    setTippy(aboutBtn, 'About this project', placement);
+    // setTippy(aboutBtn, 'About this project', placement);
     setTippy(leaveRoomBtn, 'Leave this room', placement);
 }
 
@@ -1375,7 +1375,7 @@ function handleButtonsRule() {
     elemDisplay(fileShareBtn, buttons.main.showFileShareBtn);
     elemDisplay(documentPiPBtn, buttons.main.showDocumentPipBtn);
     elemDisplay(mySettingsBtn, buttons.main.showMySettingsBtn);
-    elemDisplay(aboutBtn, buttons.main.showAboutBtn);
+    // elemDisplay(aboutBtn, buttons.main.showAboutBtn);
     // chat
     elemDisplay(msgerMaxBtn, !isMobileDevice && buttons.chat.showMaxBtn);
     elemDisplay(msgerSaveBtn, buttons.chat.showSaveMessageBtn);
@@ -2539,29 +2539,49 @@ function setTheme() {
     //setButtonsBarPosition(mainButtonsBarPosition);
 }
 
-/**
- * Set buttons bar position
- * @param {string} position vertical / horizontal
- */
+// /**
+//  * Set buttons bar position
+//  * @param {string} position vertical / horizontal
+//  */
+// function setButtonsBarPosition(position) {
+//     if (!position || isMobileDevice) return;
+
+//     mainButtonsBarPosition = position;
+//     switch (mainButtonsBarPosition) {
+//         case 'vertical':
+//             setSP('--btns-top', '50%');
+//             setSP('--btns-right', '0px');
+//             setSP('--btns-left', '15px');
+//             setSP('--btns-margin-left', '0px');
+//             setSP('--btns-width', '40px');
+//             setSP('--btns-flex-direction', 'column');
+//             break;
+//         case 'horizontal':
+//             setSP('--btns-top', '95%');
+//             setSP('--btns-right', '25%');
+//             setSP('--btns-left', '50%');
+//             setSP('--btns-margin-left', '-330px');
+//             setSP('--btns-width', '660px');
+//             setSP('--btns-flex-direction', 'row');
+//             break;
+//         default:
+//             console.log('No position found');
+//             break;
+//     }
+//     refreshMainButtonsToolTipPlacement();
+// }
 function setButtonsBarPosition(position) {
     if (!position || isMobileDevice) return;
 
     mainButtonsBarPosition = position;
     switch (mainButtonsBarPosition) {
-        case 'vertical':
-            setSP('--btns-top', '50%');
-            setSP('--btns-right', '0px');
-            setSP('--btns-left', '15px');
-            setSP('--btns-margin-left', '0px');
-            setSP('--btns-width', '40px');
-            setSP('--btns-flex-direction', 'column');
-            break;
         case 'horizontal':
-            setSP('--btns-top', '95%');
-            setSP('--btns-right', '25%');
+            setSP('--btns-top', 'auto');
+            setSP('--btns-bottom', '10px');
             setSP('--btns-left', '50%');
-            setSP('--btns-margin-left', '-330px');
-            setSP('--btns-width', '660px');
+            setSP('--btns-right', 'auto');
+            setSP('--btns-margin-left', '-50%');
+            setSP('--btns-width', 'auto');
             setSP('--btns-flex-direction', 'row');
             break;
         default:
@@ -2570,6 +2590,7 @@ function setButtonsBarPosition(position) {
     }
     refreshMainButtonsToolTipPlacement();
 }
+
 
 /**
  * Init to enumerate the devices
@@ -4199,7 +4220,7 @@ function manageLeftButtons() {
     setMyFileShareBtn();
     setDocumentPiPBtn();
     setMySettingsBtn();
-    setAboutBtn();
+    // setAboutBtn();
     setLeaveRoomBtn();
 }
 
@@ -5004,12 +5025,12 @@ function setMySettingsBtn() {
 
 /**
  * About button click event
- */
-function setAboutBtn() {
-    aboutBtn.addEventListener('click', (e) => {
-        showAbout();
-    });
-}
+//  */
+// function setAboutBtn() {
+//     aboutBtn.addEventListener('click', (e) => {
+//         showAbout();
+//     });
+// }
 
 /**
  * Leave room button click event

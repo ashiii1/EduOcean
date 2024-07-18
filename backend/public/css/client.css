@@ -219,7 +219,7 @@ body {
 /*--------------------------------------------------------------
 # Left buttons
 --------------------------------------------------------------*/
-
+/* 
 #buttonsBar {
     z-index: 10;
     display: none;
@@ -240,8 +240,8 @@ body {
     -ms-transform: translate(0%, -50%);
     transform: translate(0%, -50%);
 
-    /* background: var(--body-bg); */
-    box-shadow: 0px 8px 16px 0px rgb(33 33 33);
+    /* background: var(--body-bg); 
+    box-shadow: 0px 8px 16px 0px rgb(5, 197, 101);
     border: var(--border);
     border-radius: 10px;
     overflow: hidden;
@@ -273,6 +273,62 @@ body {
 .fa-microphone-slash,
 .fa-video-slash {
     color: #e74c3c !important;
+} */
+#buttonsBar {
+    z-index: 10;
+    display: none;
+    position: fixed;
+    padding: 10px;
+
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    flex-direction: row;
+
+    justify-content: center;
+    grid-gap: 1rem;
+
+    background: var(--body-bg);
+    box-shadow: 0px 8px 16px 0px rgb(5, 197, 101);
+    border: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#buttonsBar button {
+    width: 60px; /* Set width */
+    height: 60px; /* Set height */
+    padding: 5px;
+    border: none;
+    background: var(--btn-bar-bg-color);
+    color: var(--btn-bar-color);
+    font-size: 2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#buttonsBar button span {
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+#buttonsBar button:hover {
+    color: var(--hover-color);
+    transform: var(--btns-hover-scale);
+}
+
+#buttonsBar button:focus {
+    outline: none;
+}
+
+#buttonsBar #leaveRoomBtn {
+    color: #ff2d00;
 }
 
 /*--------------------------------------------------------------
@@ -1095,7 +1151,7 @@ th {
     text-align: left;
 }
 #mySettingsTable tr:nth-child(even) {
-    /* background-color: #2b2b2b; */
+    background-color: #2b2b2b;
 }
 
 .width-130 {
