@@ -1,8 +1,8 @@
 swagger: '2.0'
 
 info:
-    title: EduOcean P2P API
-    description: API description for external applications that integrates with EduOcean P2P.
+    title: MiroTalk P2P API
+    description: API description for external applications that integrates with MiroTalk P2P.
     version: 1.0.1
 
 basePath: /api/v1
@@ -66,7 +66,7 @@ paths:
                               default: 'test'
                           name:
                               type: string
-                              default: 'EduOcean'
+                              default: 'mirotalk'
                           audio:
                               type: boolean
                               default: false

@@ -2,9 +2,9 @@
 import requests
 import json
 
-API_KEY_SECRET = "EduOceanp2p_default_secret"
-EduOcean_URL = "https://p2p.EduOcean.com/api/v1/meetings"
-#EduOcean_URL = "http://localhost:3000/api/v1/meetings"
+API_KEY_SECRET = "mirotalkp2p_default_secret"
+MIROTALK_URL = "https://p2p.mirotalk.com/api/v1/meetings"
+#MIROTALK_URL = "http://localhost:3000/api/v1/meetings"
 
 headers = {
     "authorization": API_KEY_SECRET,
@@ -12,7 +12,7 @@ headers = {
 }
 
 response = requests.get(
-    EduOcean_URL,
+    MIROTALK_URL,
     headers=headers
 )
 

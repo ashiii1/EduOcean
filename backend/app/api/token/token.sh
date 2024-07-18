@@ -1,10 +1,10 @@
 #!/bin/bash
 
-API_KEY_SECRET="EduOceanp2p_default_secret"
-EduOcean_URL="https://p2p.EduOcean.com/api/v1/token"
-#EduOcean_URL="http://localhost:3000/api/v1/token"
+API_KEY_SECRET="mirotalkp2p_default_secret"
+MIROTALK_URL="https://p2p.mirotalk.com/api/v1/token"
+#MIROTALK_URL="http://localhost:3000/api/v1/token"
 
-curl $EduOcean_URL \
+curl $MIROTALK_URL \
     --header "authorization: $API_KEY_SECRET" \
     --header "Content-Type: application/json" \
     --data '{"username":"username","password":"password","presenter":"true", "expire":"1h"}' \

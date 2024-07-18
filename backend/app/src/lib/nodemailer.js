@@ -86,7 +86,7 @@ function sendEmail(subject, body) {
  */
 function getJoinRoomSubject(data) {
     const { room_id } = data;
-    return `EduOcean P2P - New user Join to Room ${room_id}`;
+    return `MiroTalk P2P - New user Join to Room ${room_id}`;
 }
 
 /**

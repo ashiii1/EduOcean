@@ -28,7 +28,7 @@ function login() {
     let password = filterXSS(document.getElementById('password').value);
 
     // http://localhost:3000/join/?room=test
-    // http://localhost:3000/join/?room=test&name=EduOcean&audio=0&video=0&screen=0&notify=0
+    // http://localhost:3000/join/?room=test&name=mirotalk&audio=0&video=0&screen=0&notify=0
     const qs = new URLSearchParams(window.location.search);
     const room = filterXSS(qs.get('room'));
 

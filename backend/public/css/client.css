@@ -39,8 +39,8 @@
 
     --tab-btn-active: rgb(30 29 29);
 
-    --btn-bar-bg-color: #fff;
-    --btn-bar-color: #000;
+    --btn-bar-bg-color: #16f028;
+    --btn-bar-color: #fd1111;
 
     /* left buttons bar vertical default */
     --btns-top: 50%;
@@ -60,12 +60,12 @@
     */
 
     /* dark theme */
-    --body-bg: radial-gradient(#393939, #000000);
+    --body-bg: radial-gradient(#f56f6f, #29f7b2);
     --msger-bg: radial-gradient(#393939, #000000);
     --msger-private-bg: radial-gradient(#393939, #000000);
     --wb-bg: radial-gradient(#393939, #000000);
     --select-bg: #2c2c2c;
-    --box-shadow: #00A36C;
+    --box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
     /* chat msg boble */
     --left-msg-bg: #252d31;
@@ -125,7 +125,7 @@ body {
     padding: 30px;
     text-align: center;
     border-radius: 10px;
-    background: #ffffff;
+    background: rgba(0, 0, 0, 0.7);
     box-shadow: var(--box-shadow);
 }
 #loadingDiv h1 {
@@ -241,7 +241,7 @@ body {
     transform: translate(0%, -50%);
 
     /* background: var(--body-bg); 
-    box-shadow: 0px 8px 16px 0px rgb(5, 197, 101);
+    box-shadow: 0px 8px 16px 0px rgb(33 33 33);
     border: var(--border);
     border-radius: 10px;
     overflow: hidden;
@@ -274,6 +274,9 @@ body {
 .fa-video-slash {
     color: #e74c3c !important;
 } */
+
+
+
 #buttonsBar {
     z-index: 10;
     display: none;
@@ -297,8 +300,8 @@ body {
 }
 
 #buttonsBar button {
-    width: 60px; /* Set width */
-    height: 60px; /* Set height */
+    width: 60px; 
+    height: 60px; 
     padding: 5px;
     border: none;
     background: var(--btn-bar-bg-color);
@@ -329,8 +332,7 @@ body {
 
 #buttonsBar #leaveRoomBtn {
     color: #ff2d00;
-}
-
+} 
 /*--------------------------------------------------------------
 # Caption
 --------------------------------------------------------------*/
@@ -1151,7 +1153,7 @@ th {
     text-align: left;
 }
 #mySettingsTable tr:nth-child(even) {
-    background-color: #2b2b2b;
+    /* background-color: #2b2b2b; */
 }
 
 .width-130 {
@@ -1631,15 +1633,18 @@ progress {
     width: 170px;
     height: 40px;
     font-size: 1.2rem;
-    background: linear-gradient(100deg, #376df9 0, #ff5fa0 var(--msger-bubble-width), #ffc55a 100%);
-    box-shadow: 0 0 6px 0 rgb(251 255 0 / 82%);
+    border-radius: 6px;
     color: #ffffff;
+    background: linear-gradient(65deg, #376df9 0, #ff5fa0 100%);
     transition: background 0.23s;
     cursor: pointer;
 }
 
 #about button:hover {
     font-weight: bold;
+    filter: brightness(1.1) saturate(1.2);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 0, 166, 0.4);
 }
 
 /*--------------------------------------------------------------

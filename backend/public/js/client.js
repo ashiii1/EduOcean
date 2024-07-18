@@ -2,6 +2,8 @@
 
 'use strict';
 
+// https://www.w3schools.com/js/js_strict.asp
+
 // Signaling server URL
 const signalingServer = getSignalingServer();
 
@@ -22,10 +24,10 @@ const images = {
     message: '../images/message.png',
     leave: '../images/leave-room.png',
     vaShare: '../images/va-share.png',
-    about: '../images/EduOcean-logo.gif',
+    about: '../images/mirotalk-logo.gif',
     feedback: '../images/feedback.png',
     forbidden: '../images/forbidden.png',
-    avatar: '../images/EduOcean-logo.png',
+    avatar: '../images/mirotalk-logo.png',
     recording: '../images/recording.png',
 }; // nice free icon: https://www.iconfinder.com
 
@@ -120,7 +122,7 @@ const showVideoPipBtn = document.pictureInPictureEnabled;
 const showDocumentPipBtn = !isEmbedded && 'documentPictureInPicture' in window;
 
 /**
- * Configuration for controlling the visibility of buttons in the EduOcean P2P client.
+ * Configuration for controlling the visibility of buttons in the MiroTalk P2P client.
  * Set properties to true to show the corresponding buttons, or false to hide them.
  * captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn, showVideoPipBtn, showDocumentPipBtn -> (auto-detected).
  */
@@ -140,7 +142,7 @@ const buttons = {
         showFileShareBtn: true,
         showDocumentPipBtn: showDocumentPipBtn,
         showMySettingsBtn: true,
-        // showAboutBtn: true, // Please keep me always true, Thank you!
+        showAboutBtn: true, // Please keep me always true, Thank you!
     },
     chat: {
         showMaxBtn: true,
@@ -227,7 +229,7 @@ const whiteboardBtn = getId('whiteboardBtn');
 const fileShareBtn = getId('fileShareBtn');
 const documentPiPBtn = getId('documentPiPBtn');
 const mySettingsBtn = getId('mySettingsBtn');
-// const aboutBtn = getId('aboutBtn');
+const aboutBtn = getId('aboutBtn');
 const leaveRoomBtn = getId('leaveRoomBtn');
 
 // Room Emoji Picker
@@ -372,7 +374,7 @@ const pauseRecBtn = getId('pauseRecBtn');
 const resumeRecBtn = getId('resumeRecBtn');
 const recordingTime = getId('recordingTime');
 const lastRecordingInfo = getId('lastRecordingInfo');
-const themeSelect = getId('EduOceanTheme');
+const themeSelect = getId('mirotalkTheme');
 const videoObjFitSelect = getId('videoObjFitSelect');
 const mainButtonsBar = getQsA('#buttonsBar button');
 const mainButtonsIcon = getQsA('#buttonsBar button i');
@@ -847,7 +849,7 @@ function refreshMainButtonsToolTipPlacement() {
     setTippy(fileShareBtn, 'Share file', placement);
     setTippy(documentPiPBtn, 'Toggle picture in picture', placement);
     setTippy(mySettingsBtn, 'Open the settings', placement);
-    // setTippy(aboutBtn, 'About this project', placement);
+    setTippy(aboutBtn, 'About this project', placement);
     setTippy(leaveRoomBtn, 'Leave this room', placement);
 }
 
@@ -1375,7 +1377,7 @@ function handleButtonsRule() {
     elemDisplay(fileShareBtn, buttons.main.showFileShareBtn);
     elemDisplay(documentPiPBtn, buttons.main.showDocumentPipBtn);
     elemDisplay(mySettingsBtn, buttons.main.showMySettingsBtn);
-    // elemDisplay(aboutBtn, buttons.main.showAboutBtn);
+    elemDisplay(aboutBtn, buttons.main.showAboutBtn);
     // chat
     elemDisplay(msgerMaxBtn, !isMobileDevice && buttons.chat.showMaxBtn);
     elemDisplay(msgerSaveBtn, buttons.chat.showSaveMessageBtn);
@@ -1470,7 +1472,7 @@ async function whoAreYou() {
         allowOutsideClick: false,
         allowEscapeKey: false,
         background: swBg,
-        title: 'Welcome Aspirant',
+        title: 'MiroTalk P2P',
         position: 'center',
         input: 'text',
         inputPlaceholder: 'Enter your name',
@@ -2153,7 +2155,7 @@ async function handleRTCDataChannels(peer_id) {
         console.log('handleRTCDataChannels ' + peer_id, event);
         event.channel.onmessage = (msg) => {
             switch (event.channel.label) {
-                case 'EduOcean_chat_channel':
+                case 'mirotalk_chat_channel':
                     try {
                         const dataMessage = JSON.parse(msg.data);
                         switch (dataMessage.type) {
@@ -2170,10 +2172,10 @@ async function handleRTCDataChannels(peer_id) {
                                 break;
                         }
                     } catch (err) {
-                        console.error('EduOcean_chat_channel', err);
+                        console.error('mirotalk_chat_channel', err);
                     }
                     break;
-                case 'EduOcean_file_sharing_channel':
+                case 'mirotalk_file_sharing_channel':
                     try {
                         const dataFile = msg.data;
                         if (dataFile instanceof ArrayBuffer && dataFile.byteLength != 0) {
@@ -2186,12 +2188,12 @@ async function handleRTCDataChannels(peer_id) {
                                         handleDataChannelFileSharing(arrayBuffer);
                                     })
                                     .catch((error) => {
-                                        console.error('EduOcean_file_sharing_channel', error);
+                                        console.error('mirotalk_file_sharing_channel', error);
                                     });
                             }
                         }
                     } catch (err) {
-                        console.error('EduOcean_file_sharing_channel', err);
+                        console.error('mirotalk_file_sharing_channel', err);
                     }
                     break;
                 default:
@@ -2291,7 +2293,7 @@ function handleSessionDescription(config) {
                                 });
                                 console.log('Answer setLocalDescription done!');
 
-                                // https://github.com/miroslavpejic85/EduOcean/issues/110
+                                // https://github.com/miroslavpejic85/mirotalk/issues/110
                                 if (needToCreateOffer) {
                                     needToCreateOffer = false;
                                     handleRtcOffer(peer_id);
@@ -2424,13 +2426,13 @@ function setCustomTheme() {
 }
 
 /**
- * Set EduOcean theme | dark | grey | ...
+ * Set mirotalk theme | dark | grey | ...
  */
 function setTheme() {
     if (themeCustom.keep) return setCustomTheme();
 
-    EduOceanTheme.selectedIndex = lsSettings.theme;
-    const theme = EduOceanTheme.value;
+    mirotalkTheme.selectedIndex = lsSettings.theme;
+    const theme = mirotalkTheme.value;
     switch (theme) {
         case 'dark':
             // dark theme
@@ -2440,96 +2442,156 @@ function setTheme() {
             setSP('--msger-private-bg', 'radial-gradient(#393939, #000000)');
             setSP('--wb-bg', 'radial-gradient(#393939, #000000)');
             setSP('--elem-border-color', 'none');
-            setSP('--navbar-bg', 'rgba(0, 0, 0, 0.2)');
-            setSP('--select-bg', '#2c2c2c');
-            setSP('--tab-btn-active', 'rgb(30 29 29)');
-            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.2)');
-            setSP('--left-msg-bg', '#252d31');
-            setSP('--right-msg-bg', '#056162');
-            setSP('--private-msg-bg', '#6b1226');
+            setSP('--navbar-bg', 'rgba(28, 28, 28, 0.8)');
+            setSP('--select-bg', '#3a3a3a');
+            setSP('--tab-btn-active', '#4f4f4f');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--left-msg-bg', '#353535');
+            setSP('--right-msg-bg', '#4a4a4a');
+            setSP('--private-msg-bg', '#2a2a2a');
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#393939, #000000)';
-            EduOceanTheme.selectedIndex = 0;
+            mirotalkTheme.selectedIndex = 0;
             break;
         case 'grey':
             // grey theme
-            swBg = 'radial-gradient(#666, #333)';
-            setSP('--body-bg', 'radial-gradient(#666, #333)');
-            setSP('--msger-bg', 'radial-gradient(#666, #333)');
-            setSP('--wb-bg', 'radial-gradient(#797979, #000)');
+            swBg = 'radial-gradient(#4f4f4f, #1c1c1c)';
+            setSP('--body-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--msger-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--wb-bg', 'radial-gradient(#5f5f5f, #2c2c2c)');
             setSP('--elem-border-color', 'none');
-            setSP('--navbar-bg', 'rgba(0, 0, 0, 0.2)');
-            setSP('--select-bg', '#2c2c2c');
-            setSP('--tab-btn-active', 'rgb(30 29 29)');
-            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.2)');
-            setSP('--msger-private-bg', 'radial-gradient(#666, #333)');
-            setSP('--left-msg-bg', '#252d31');
-            setSP('--right-msg-bg', '#056162');
-            setSP('--private-msg-bg', '#6b1226');
+            setSP('--navbar-bg', 'rgba(28, 28, 28, 0.8)');
+            setSP('--select-bg', '#3a3a3a');
+            setSP('--tab-btn-active', '#4f4f4f');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#353535');
+            setSP('--right-msg-bg', '#4a4a4a');
+            setSP('--private-msg-bg', '#616161');
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
-            document.body.style.background = 'radial-gradient(#666, #333)';
-            EduOceanTheme.selectedIndex = 1;
+            document.body.style.background = 'radial-gradient(#4f4f4f, #1c1c1c)';
+            mirotalkTheme.selectedIndex = 1;
             break;
         case 'green':
             // green theme
-            swBg = 'radial-gradient(#003934, #001E1A)';
-            setSP('--body-bg', 'radial-gradient(#003934, #001E1A)');
-            setSP('--msger-bg', 'radial-gradient(#003934, #001E1A)');
-            setSP('--wb-bg', 'radial-gradient(#003934, #001E1A)');
+            swBg = 'radial-gradient(#004d40, #001f1c)';
+            setSP('--body-bg', 'radial-gradient(#004d40, #001f1c)');
+            setSP('--msger-bg', 'radial-gradient(#004d40, #001f1c)');
+            setSP('--wb-bg', 'radial-gradient(#004d40, #001f1c)');
             setSP('--elem-border-color', 'none');
-            setSP('--navbar-bg', 'rgba(0, 0, 0, 0.2)');
-            setSP('--select-bg', '#001E1A');
-            setSP('--tab-btn-active', '#003934');
-            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.2)');
-            setSP('--msger-private-bg', 'radial-gradient(#666, #333)');
-            setSP('--left-msg-bg', '#003934');
-            setSP('--right-msg-bg', '#001E1A');
-            setSP('--private-msg-bg', '#6b1226');
+            setSP('--navbar-bg', 'rgba(0, 31, 28, 0.8)');
+            setSP('--select-bg', '#002e2b');
+            setSP('--tab-btn-active', '#004d40');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#004d40');
+            setSP('--right-msg-bg', '#00312c');
+            setSP('--private-msg-bg', '#004a47');
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
-            document.body.style.background = 'radial-gradient(#003934, #001E1A)';
-            EduOceanTheme.selectedIndex = 2;
+            document.body.style.background = 'radial-gradient(#004d40, #001f1c)';
+            mirotalkTheme.selectedIndex = 2;
             break;
         case 'blue':
             // blue theme
-            swBg = 'radial-gradient(#306bac, #141B41)';
-            setSP('--body-bg', 'radial-gradient(#306bac, #141B41)');
-            setSP('--msger-bg', 'radial-gradient(#306bac, #141B41)');
-            setSP('--wb-bg', 'radial-gradient(#306bac, #141B41)');
+            swBg = 'radial-gradient(#1a237e, #0d1b34)';
+            setSP('--body-bg', 'radial-gradient(#1a237e, #0d1b34)');
+            setSP('--msger-bg', 'radial-gradient(#1a237e, #0d1b34)');
+            setSP('--wb-bg', 'radial-gradient(#1a237e, #0d1b34)');
             setSP('--elem-border-color', 'none');
-            setSP('--navbar-bg', 'rgba(0, 0, 0, 0.2)');
-            setSP('--select-bg', '#141B41');
-            setSP('--tab-btn-active', '#306bac');
-            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.2)');
-            setSP('--msger-private-bg', 'radial-gradient(#666, #333)');
-            setSP('--left-msg-bg', '#306bac');
-            setSP('--right-msg-bg', '#141B41');
-            setSP('--private-msg-bg', '#6b1226');
+            setSP('--navbar-bg', 'rgba(13, 27, 52, 0.8)');
+            setSP('--select-bg', '#0d1b34');
+            setSP('--tab-btn-active', '#1a237e');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#1a237e');
+            setSP('--right-msg-bg', '#0d1b34');
+            setSP('--private-msg-bg', '#1a237e');
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
-            document.body.style.background = 'radial-gradient(#306bac, #141B41)';
-            EduOceanTheme.selectedIndex = 3;
+            document.body.style.background = 'radial-gradient(#1a237e, #0d1b34)';
+            mirotalkTheme.selectedIndex = 3;
             break;
         case 'red':
             // red theme
-            swBg = 'radial-gradient(#69140E, #3C1518)';
-            setSP('--body-bg', 'radial-gradient(#69140E, #3C1518)');
-            setSP('--msger-bg', 'radial-gradient(#69140E, #3C1518)');
-            setSP('--wb-bg', 'radial-gradient(#69140E, #3C1518)');
-            setSP('--navbar-bg', 'rgba(0, 0, 0, 0.2)');
-            setSP('--select-bg', '#3C1518');
-            setSP('--tab-btn-active', '#69140E');
-            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.2)');
-            setSP('--msger-private-bg', 'radial-gradient(#666, #333)');
-            setSP('--left-msg-bg', '#69140E');
-            setSP('--right-msg-bg', '#3C1518');
-            setSP('--private-msg-bg', '#6b1226');
+            swBg = 'radial-gradient(#8B0000, #320000)';
+            setSP('--body-bg', 'radial-gradient(#8B0000, #320000)');
+            setSP('--msger-bg', 'radial-gradient(#8B0000, #320000)');
+            setSP('--wb-bg', 'radial-gradient(#8B0000, #320000)');
+            setSP('--navbar-bg', 'rgba(50, 0, 0, 0.8)');
+            setSP('--select-bg', '#320000');
+            setSP('--tab-btn-active', '#8B0000');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#8B0000');
+            setSP('--right-msg-bg', '#4B0000');
+            setSP('--private-msg-bg', '#8B0000');
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
-            document.body.style.background = 'radial-gradient(#69140E, #3C1518)';
-            EduOceanTheme.selectedIndex = 4;
+            document.body.style.background = 'radial-gradient(#8B0000, #320000)';
+            mirotalkTheme.selectedIndex = 4;
+            break;
+        case 'purple':
+            // purple theme
+            swBg = 'radial-gradient(#4B0082, #2C003E)';
+            setSP('--body-bg', 'radial-gradient(#4B0082, #2C003E)');
+            setSP('--msger-bg', 'radial-gradient(#4B0082, #2C003E)');
+            setSP('--wb-bg', 'radial-gradient(#4B0082, #2C003E)');
+            setSP('--elem-border-color', 'none');
+            setSP('--navbar-bg', 'rgba(44, 0, 62, 0.8)');
+            setSP('--select-bg', '#2C003E');
+            setSP('--tab-btn-active', '#4B0082');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#4B0082');
+            setSP('--right-msg-bg', '#2C003E');
+            setSP('--private-msg-bg', '#4B0082');
+            setSP('--btn-bar-bg-color', '#FFFFFF');
+            setSP('--btn-bar-color', '#000000');
+            document.body.style.background = 'radial-gradient(#4B0082, #2C003E)';
+            mirotalkTheme.selectedIndex = 5;
+            break;
+        case 'orange':
+            // orange theme
+            swBg = 'radial-gradient(#FF8C00, #4B1C00)';
+            setSP('--body-bg', 'radial-gradient(#FF8C00, #4B1C00)');
+            setSP('--msger-bg', 'radial-gradient(#FF8C00, #4B1C00)');
+            setSP('--wb-bg', 'radial-gradient(#FF8C00, #4B1C00)');
+            setSP('--elem-border-color', 'none');
+            setSP('--navbar-bg', 'rgba(75, 28, 0, 0.8)');
+            setSP('--select-bg', '#4B1C00');
+            setSP('--tab-btn-active', '#FF8C00');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#FF8C00');
+            setSP('--right-msg-bg', '#4B1C00');
+            setSP('--private-msg-bg', '#FF8C00');
+            setSP('--btn-bar-bg-color', '#FFFFFF');
+            setSP('--btn-bar-color', '#000000');
+            document.body.style.background = 'radial-gradient(#FF8C00, #4B1C00)';
+            mirotalkTheme.selectedIndex = 6;
+            break;
+        case 'yellow':
+            // yellow theme
+            swBg = 'radial-gradient(#FFD700, #3B3B00)';
+            setSP('--body-bg', 'radial-gradient(#FFD700, #3B3B00)');
+            setSP('--msger-bg', 'radial-gradient(#FFD700, #3B3B00)');
+            setSP('--wb-bg', 'radial-gradient(#FFD700, #3B3B00)');
+            setSP('--elem-border-color', 'none');
+            setSP('--navbar-bg', 'rgba(59, 59, 0, 0.8)');
+            setSP('--select-bg', '#3B3B00');
+            setSP('--tab-btn-active', '#FFD700');
+            setSP('--box-shadow', '0px 8px 16px 0px rgba(0, 0, 0, 0.4)');
+            setSP('--msger-private-bg', 'radial-gradient(#4f4f4f, #1c1c1c)');
+            setSP('--left-msg-bg', '#FFD700');
+            setSP('--right-msg-bg', '#B8860B');
+            setSP('--private-msg-bg', '#FFD700');
+            setSP('--btn-bar-bg-color', '#FFFFFF');
+            setSP('--btn-bar-color', '#000000');
+            document.body.style.background = 'radial-gradient(#FFD700, #3B3B00)';
+            mirotalkTheme.selectedIndex = 7;
             break;
         // ...
         default:
@@ -2539,49 +2601,29 @@ function setTheme() {
     //setButtonsBarPosition(mainButtonsBarPosition);
 }
 
-// /**
-//  * Set buttons bar position
-//  * @param {string} position vertical / horizontal
-//  */
-// function setButtonsBarPosition(position) {
-//     if (!position || isMobileDevice) return;
-
-//     mainButtonsBarPosition = position;
-//     switch (mainButtonsBarPosition) {
-//         case 'vertical':
-//             setSP('--btns-top', '50%');
-//             setSP('--btns-right', '0px');
-//             setSP('--btns-left', '15px');
-//             setSP('--btns-margin-left', '0px');
-//             setSP('--btns-width', '40px');
-//             setSP('--btns-flex-direction', 'column');
-//             break;
-//         case 'horizontal':
-//             setSP('--btns-top', '95%');
-//             setSP('--btns-right', '25%');
-//             setSP('--btns-left', '50%');
-//             setSP('--btns-margin-left', '-330px');
-//             setSP('--btns-width', '660px');
-//             setSP('--btns-flex-direction', 'row');
-//             break;
-//         default:
-//             console.log('No position found');
-//             break;
-//     }
-//     refreshMainButtonsToolTipPlacement();
-// }
+/**
+ * Set buttons bar position
+ * @param {string} position vertical / horizontal
+ */
 function setButtonsBarPosition(position) {
     if (!position || isMobileDevice) return;
 
     mainButtonsBarPosition = position;
     switch (mainButtonsBarPosition) {
+        case 'vertical':
+            setSP('--btns-top', '50%');
+            setSP('--btns-right', '0px');
+            setSP('--btns-left', '15px');
+            setSP('--btns-margin-left', '0px');
+            setSP('--btns-width', '40px');
+            setSP('--btns-flex-direction', 'column');
+            break;
         case 'horizontal':
-            setSP('--btns-top', 'auto');
-            setSP('--btns-bottom', '10px');
+            setSP('--btns-top', '95%');
+            setSP('--btns-right', '25%');
             setSP('--btns-left', '50%');
-            setSP('--btns-right', 'auto');
-            setSP('--btns-margin-left', '-50%');
-            setSP('--btns-width', 'auto');
+            setSP('--btns-margin-left', '-330px');
+            setSP('--btns-width', '660px');
             setSP('--btns-flex-direction', 'row');
             break;
         default:
@@ -2590,7 +2632,6 @@ function setButtonsBarPosition(position) {
     }
     refreshMainButtonsToolTipPlacement();
 }
-
 
 /**
  * Init to enumerate the devices
@@ -4220,7 +4261,7 @@ function manageLeftButtons() {
     setMyFileShareBtn();
     setDocumentPiPBtn();
     setMySettingsBtn();
-    // setAboutBtn();
+    setAboutBtn();
     setLeaveRoomBtn();
 }
 
@@ -5025,12 +5066,12 @@ function setMySettingsBtn() {
 
 /**
  * About button click event
-//  */
-// function setAboutBtn() {
-//     aboutBtn.addEventListener('click', (e) => {
-//         showAbout();
-//     });
-// }
+ */
+function setAboutBtn() {
+    aboutBtn.addEventListener('click', (e) => {
+        showAbout();
+    });
+}
 
 /**
  * Leave room button click event
@@ -5761,7 +5802,7 @@ function shareRoomByEmail() {
             const selectedDateTime = document.getElementById('datetimePicker').value;
             const roomPassword = isRoomLocked && thisRoomPassword ? 'Password: ' + thisRoomPassword + newLine : '';
             const email = '';
-            const emailSubject = `Please join our EduOcean P2P Video Chat Meeting`;
+            const emailSubject = `Please join our MiroTalk P2P Video Chat Meeting`;
             const emailBody = `The meeting is scheduled at: ${newLine} DateTime: ${selectedDateTime} ${newLine}${roomPassword}Click to join: ${roomURL} ${newLine}`;
             document.location = 'mailto:' + email + '?subject=' + emailSubject + '&body=' + emailBody;
         },
@@ -6772,7 +6813,7 @@ function downloadRecordedStream() {
  * @param {string} peer_id socket.id
  */
 function createChatDataChannel(peer_id) {
-    chatDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('EduOcean_chat_channel');
+    chatDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('mirotalk_chat_channel');
     chatDataChannels[peer_id].onopen = (event) => {
         console.log('chatDataChannels created', event);
     };
@@ -9284,7 +9325,7 @@ function wbDrawing(status) {
  * @param {string} peer_id socket.id
  */
 function createFileSharingDataChannel(peer_id) {
-    fileDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('EduOcean_file_sharing_channel');
+    fileDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('mirotalk_file_sharing_channel');
     fileDataChannels[peer_id].binaryType = 'arraybuffer';
     fileDataChannels[peer_id].onopen = (event) => {
         console.log('fileDataChannels created', event);
@@ -9470,7 +9511,7 @@ function selectFileToShare(peer_id, broadcast = false) {
     Swal.fire({
         allowOutsideClick: false,
         background: swBg,
-        imageAlt: 'EduOcean-file-sharing',
+        imageAlt: 'mirotalk-file-sharing',
         imageUrl: images.share,
         position: 'center',
         title: 'Share file',
@@ -9676,7 +9717,7 @@ function endDownload() {
                 title: 'Received file',
                 text: incomingFileInfo.file.fileName + ' size ' + bytesToSize(incomingFileInfo.file.fileSize),
                 imageUrl: e.target.result,
-                imageAlt: 'EduOcean-file-img-download',
+                imageAlt: 'mirotalk-file-img-download',
                 showDenyButton: true,
                 confirmButtonText: `Save`,
                 denyButtonText: `Cancel`,
@@ -9693,7 +9734,7 @@ function endDownload() {
         Swal.fire({
             allowOutsideClick: false,
             background: swBg,
-            imageAlt: 'EduOcean-file-download',
+            imageAlt: 'mirotalk-file-download',
             imageUrl: images.share,
             position: 'center',
             title: 'Received file',
@@ -9997,7 +10038,7 @@ function handleKickedOut(config) {
 }
 
 /**
- * EduOcean about info
+ * MiroTalk about info
  */
 function showAbout() {
     playSound('newMessage');
@@ -10005,8 +10046,8 @@ function showAbout() {
     Swal.fire({
         background: swBg,
         position: 'center',
-        title: '<strong>WebRTC P2P v1.3.41</strong>',
-        imageAlt: 'EduOcean-about',
+        title: '<strong>WebRTC P2P v1.3.46</strong>',
+        imageAlt: 'mirotalk-about',
         imageUrl: images.about,
         customClass: { image: 'img-about' },
         html: `
@@ -10015,7 +10056,6 @@ function showAbout() {
             <button 
                 id="support-button" 
                 data-umami-event="Support button" 
-                class="pulsate" 
                 onclick="window.open('https://codecanyon.net/user/miroslavpejic85')">
                 <i class="${className.heart}" ></i>&nbsp;Support
             </button>
@@ -10030,12 +10070,12 @@ function showAbout() {
             Email:<a 
                 id="email-button" 
                 data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=EduOcean P2P info"> 
+                href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
                 miroslav.pejic.85@gmail.com
             </a>
             <br /><br />
             <hr />
-            <span>&copy; 2024 EduOcean P2P, all rights reserved</span>
+            <span>&copy; 2024 MiroTalk P2P, all rights reserved</span>
             <hr />
         </div>
         `,
@@ -10067,7 +10107,7 @@ function leaveFeedback() {
         background: swBg,
         imageUrl: images.feedback,
         title: 'Leave a feedback',
-        text: 'Do you want to rate your EduOcean experience?',
+        text: 'Do you want to rate your MiroTalk experience?',
         confirmButtonText: `Yes`,
         denyButtonText: `No`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },

@@ -313,10 +313,11 @@ html {
 body {
     /* background: #16171b; */
     background: linear-gradient(to left, #ffffff, #fffcfc);
-    background-image: url("https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630");
+    background-image: url("https://thumbnails.production.thenounproject.com/7FU7_jcYfoZzgbhHnjPYcWX_3FY=/fit-in/1000x1000/photos.production.thenounproject.com/photos/BA49B880-E8C3-4A5B-A6C5-C2D701603E9D.jpg");
      background-repeat: no-repeat;
-     height: 1000px;
-     width: 1000px;
+     background-size: contain;
+     background-size: cover;
+    
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
@@ -2790,7 +2791,7 @@ ul.pricing-item-features-list li {
     max-width: 100%;
     height: 1024px;
     /* background-image: url(../images/illustration-section-01.svg); */
-    background-image: url(../images/bg.svg); /*as*/
+    /* background-image: url(../images/bg.svg); as */
     background-repeat: no-repeat;
     background-size: cover; /*auto*/
     left: 50%;
