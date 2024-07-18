@@ -1,6 +1,6 @@
-## Expose MiroTalk on HTTPS
+## Expose EduOcean on HTTPS
 
-![mirotalk-https](https.png)
+![EduOcean-https](https.png)
 
 1. Generate a [self-signed certificate](https://en.wikipedia.org/wiki/Self-signed_certificate)
 

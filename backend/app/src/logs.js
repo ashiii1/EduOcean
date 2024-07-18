@@ -19,7 +19,7 @@ const options = {
     colors: LOGS_COLORS,
 };
 module.exports = class Logs {
-    constructor(appName = 'miroTalkP2P') {
+    constructor(appName = 'EduOceanP2P') {
         this.appName = colors.yellow(appName);
         this.debugOn = LOGS_DEBUG;
         this.timeStart = Date.now();

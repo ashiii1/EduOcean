@@ -30,21 +30,21 @@ const footer = document.getElementById('footer');
 
 const brand = {
     app: {
-        name: 'MiroTalk',
-        title: 'MiroTalk<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
+        name: 'EduOcean',
+        title: 'EduOcean<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
         description:
             'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
     },
     site: {
-        landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        loginTitle: 'MiroTalk - Host Protected login required.',
-        clientTitle: 'MiroTalk WebRTC Video call, Chat Room & Screen Sharing.',
-        privacyPolicyTitle: 'MiroTalk - privacy and policy.',
+        landingTitle: 'EduOcean a Free Secure Video Calls, Chat & Screen Sharing.',
+        newCallTitle: 'EduOcean a Free Secure Video Calls, Chat & Screen Sharing.',
+        loginTitle: 'EduOcean - Host Protected login required.',
+        clientTitle: 'Loading your video.',
+        privacyPolicyTitle: 'EduOcean - privacy and policy.',
         stunTurnTitle: 'Test Stun/Turn Servers.',
-        notFoundTitle: 'MiroTalk - 404 Page not found.',
-        shortcutIcon: '../images/logo.svg',
-        appleTouchIcon: '../images/logo.svg',
+        notFoundTitle: 'EduOcean - 404 Page not found.',
+        shortcutIcon: '../images/mainlogo.png',
+        appleTouchIcon: '../images/mainlogo.png',
     },
     html: {
         features: true,

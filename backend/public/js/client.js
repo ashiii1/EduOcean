@@ -22,10 +22,10 @@ const images = {
     message: '../images/message.png',
     leave: '../images/leave-room.png',
     vaShare: '../images/va-share.png',
-    about: '../images/mirotalk-logo.gif',
+    about: '../images/EduOcean-logo.gif',
     feedback: '../images/feedback.png',
     forbidden: '../images/forbidden.png',
-    avatar: '../images/mirotalk-logo.png',
+    avatar: '../images/EduOcean-logo.png',
     recording: '../images/recording.png',
 }; // nice free icon: https://www.iconfinder.com
 
@@ -120,7 +120,7 @@ const showVideoPipBtn = document.pictureInPictureEnabled;
 const showDocumentPipBtn = !isEmbedded && 'documentPictureInPicture' in window;
 
 /**
- * Configuration for controlling the visibility of buttons in the MiroTalk P2P client.
+ * Configuration for controlling the visibility of buttons in the EduOcean P2P client.
  * Set properties to true to show the corresponding buttons, or false to hide them.
  * captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn, showVideoPipBtn, showDocumentPipBtn -> (auto-detected).
  */
@@ -372,7 +372,7 @@ const pauseRecBtn = getId('pauseRecBtn');
 const resumeRecBtn = getId('resumeRecBtn');
 const recordingTime = getId('recordingTime');
 const lastRecordingInfo = getId('lastRecordingInfo');
-const themeSelect = getId('mirotalkTheme');
+const themeSelect = getId('EduOceanTheme');
 const videoObjFitSelect = getId('videoObjFitSelect');
 const mainButtonsBar = getQsA('#buttonsBar button');
 const mainButtonsIcon = getQsA('#buttonsBar button i');
@@ -2153,7 +2153,7 @@ async function handleRTCDataChannels(peer_id) {
         console.log('handleRTCDataChannels ' + peer_id, event);
         event.channel.onmessage = (msg) => {
             switch (event.channel.label) {
-                case 'mirotalk_chat_channel':
+                case 'EduOcean_chat_channel':
                     try {
                         const dataMessage = JSON.parse(msg.data);
                         switch (dataMessage.type) {
@@ -2170,10 +2170,10 @@ async function handleRTCDataChannels(peer_id) {
                                 break;
                         }
                     } catch (err) {
-                        console.error('mirotalk_chat_channel', err);
+                        console.error('EduOcean_chat_channel', err);
                     }
                     break;
-                case 'mirotalk_file_sharing_channel':
+                case 'EduOcean_file_sharing_channel':
                     try {
                         const dataFile = msg.data;
                         if (dataFile instanceof ArrayBuffer && dataFile.byteLength != 0) {
@@ -2186,12 +2186,12 @@ async function handleRTCDataChannels(peer_id) {
                                         handleDataChannelFileSharing(arrayBuffer);
                                     })
                                     .catch((error) => {
-                                        console.error('mirotalk_file_sharing_channel', error);
+                                        console.error('EduOcean_file_sharing_channel', error);
                                     });
                             }
                         }
                     } catch (err) {
-                        console.error('mirotalk_file_sharing_channel', err);
+                        console.error('EduOcean_file_sharing_channel', err);
                     }
                     break;
                 default:
@@ -2291,7 +2291,7 @@ function handleSessionDescription(config) {
                                 });
                                 console.log('Answer setLocalDescription done!');
 
-                                // https://github.com/miroslavpejic85/mirotalk/issues/110
+                                // https://github.com/miroslavpejic85/EduOcean/issues/110
                                 if (needToCreateOffer) {
                                     needToCreateOffer = false;
                                     handleRtcOffer(peer_id);
@@ -2424,13 +2424,13 @@ function setCustomTheme() {
 }
 
 /**
- * Set mirotalk theme | dark | grey | ...
+ * Set EduOcean theme | dark | grey | ...
  */
 function setTheme() {
     if (themeCustom.keep) return setCustomTheme();
 
-    mirotalkTheme.selectedIndex = lsSettings.theme;
-    const theme = mirotalkTheme.value;
+    EduOceanTheme.selectedIndex = lsSettings.theme;
+    const theme = EduOceanTheme.value;
     switch (theme) {
         case 'dark':
             // dark theme
@@ -2450,7 +2450,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#393939, #000000)';
-            mirotalkTheme.selectedIndex = 0;
+            EduOceanTheme.selectedIndex = 0;
             break;
         case 'grey':
             // grey theme
@@ -2470,7 +2470,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#666, #333)';
-            mirotalkTheme.selectedIndex = 1;
+            EduOceanTheme.selectedIndex = 1;
             break;
         case 'green':
             // green theme
@@ -2490,7 +2490,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#003934, #001E1A)';
-            mirotalkTheme.selectedIndex = 2;
+            EduOceanTheme.selectedIndex = 2;
             break;
         case 'blue':
             // blue theme
@@ -2510,7 +2510,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#306bac, #141B41)';
-            mirotalkTheme.selectedIndex = 3;
+            EduOceanTheme.selectedIndex = 3;
             break;
         case 'red':
             // red theme
@@ -2529,7 +2529,7 @@ function setTheme() {
             setSP('--btn-bar-bg-color', '#FFFFFF');
             setSP('--btn-bar-color', '#000000');
             document.body.style.background = 'radial-gradient(#69140E, #3C1518)';
-            mirotalkTheme.selectedIndex = 4;
+            EduOceanTheme.selectedIndex = 4;
             break;
         // ...
         default:
@@ -5761,7 +5761,7 @@ function shareRoomByEmail() {
             const selectedDateTime = document.getElementById('datetimePicker').value;
             const roomPassword = isRoomLocked && thisRoomPassword ? 'Password: ' + thisRoomPassword + newLine : '';
             const email = '';
-            const emailSubject = `Please join our MiroTalk P2P Video Chat Meeting`;
+            const emailSubject = `Please join our EduOcean P2P Video Chat Meeting`;
             const emailBody = `The meeting is scheduled at: ${newLine} DateTime: ${selectedDateTime} ${newLine}${roomPassword}Click to join: ${roomURL} ${newLine}`;
             document.location = 'mailto:' + email + '?subject=' + emailSubject + '&body=' + emailBody;
         },
@@ -6772,7 +6772,7 @@ function downloadRecordedStream() {
  * @param {string} peer_id socket.id
  */
 function createChatDataChannel(peer_id) {
-    chatDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('mirotalk_chat_channel');
+    chatDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('EduOcean_chat_channel');
     chatDataChannels[peer_id].onopen = (event) => {
         console.log('chatDataChannels created', event);
     };
@@ -9284,7 +9284,7 @@ function wbDrawing(status) {
  * @param {string} peer_id socket.id
  */
 function createFileSharingDataChannel(peer_id) {
-    fileDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('mirotalk_file_sharing_channel');
+    fileDataChannels[peer_id] = peerConnections[peer_id].createDataChannel('EduOcean_file_sharing_channel');
     fileDataChannels[peer_id].binaryType = 'arraybuffer';
     fileDataChannels[peer_id].onopen = (event) => {
         console.log('fileDataChannels created', event);
@@ -9470,7 +9470,7 @@ function selectFileToShare(peer_id, broadcast = false) {
     Swal.fire({
         allowOutsideClick: false,
         background: swBg,
-        imageAlt: 'mirotalk-file-sharing',
+        imageAlt: 'EduOcean-file-sharing',
         imageUrl: images.share,
         position: 'center',
         title: 'Share file',
@@ -9676,7 +9676,7 @@ function endDownload() {
                 title: 'Received file',
                 text: incomingFileInfo.file.fileName + ' size ' + bytesToSize(incomingFileInfo.file.fileSize),
                 imageUrl: e.target.result,
-                imageAlt: 'mirotalk-file-img-download',
+                imageAlt: 'EduOcean-file-img-download',
                 showDenyButton: true,
                 confirmButtonText: `Save`,
                 denyButtonText: `Cancel`,
@@ -9693,7 +9693,7 @@ function endDownload() {
         Swal.fire({
             allowOutsideClick: false,
             background: swBg,
-            imageAlt: 'mirotalk-file-download',
+            imageAlt: 'EduOcean-file-download',
             imageUrl: images.share,
             position: 'center',
             title: 'Received file',
@@ -9997,7 +9997,7 @@ function handleKickedOut(config) {
 }
 
 /**
- * MiroTalk about info
+ * EduOcean about info
  */
 function showAbout() {
     playSound('newMessage');
@@ -10006,7 +10006,7 @@ function showAbout() {
         background: swBg,
         position: 'center',
         title: '<strong>WebRTC P2P v1.3.41</strong>',
-        imageAlt: 'mirotalk-about',
+        imageAlt: 'EduOcean-about',
         imageUrl: images.about,
         customClass: { image: 'img-about' },
         html: `
@@ -10030,12 +10030,12 @@ function showAbout() {
             Email:<a 
                 id="email-button" 
                 data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=MiroTalk P2P info"> 
+                href="mailto:miroslav.pejic.85@gmail.com?subject=EduOcean P2P info"> 
                 miroslav.pejic.85@gmail.com
             </a>
             <br /><br />
             <hr />
-            <span>&copy; 2024 MiroTalk P2P, all rights reserved</span>
+            <span>&copy; 2024 EduOcean P2P, all rights reserved</span>
             <hr />
         </div>
         `,
@@ -10067,7 +10067,7 @@ function leaveFeedback() {
         background: swBg,
         imageUrl: images.feedback,
         title: 'Leave a feedback',
-        text: 'Do you want to rate your MiroTalk experience?',
+        text: 'Do you want to rate your EduOcean experience?',
         confirmButtonText: `Yes`,
         denyButtonText: `No`,
         showClass: { popup: 'animate__animated animate__fadeInDown' },

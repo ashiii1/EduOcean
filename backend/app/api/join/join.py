@@ -2,10 +2,10 @@
 import requests
 import json
 
-API_KEY_SECRET = "mirotalkp2p_default_secret"
-MIROTALK_URL = "https://p2p.mirotalk.com/api/v1/join"
-# MIROTALK_URL = "http://localhost:3000/api/v1/join"
-# MIROTALK_URL = "https://mirotalk.up.railway.app/api/v1/join"
+API_KEY_SECRET = "EduOceanp2p_default_secret"
+EduOcean_URL = "https://p2p.EduOcean.com/api/v1/join"
+# EduOcean_URL = "http://localhost:3000/api/v1/join"
+# EduOcean_URL = "https://EduOcean.up.railway.app/api/v1/join"
 
 headers = {
     "authorization": API_KEY_SECRET,
@@ -14,7 +14,7 @@ headers = {
 
 data = {
     "room": "test",
-    "name": "mirotalk",
+    "name": "EduOcean",
     "audio": "true",
     "video": "true",
     "screen": "false",
@@ -29,7 +29,7 @@ data = {
 }
 
 response = requests.post(
-    MIROTALK_URL,
+    EduOcean_URL,
     headers=headers,
     json=data,
 )

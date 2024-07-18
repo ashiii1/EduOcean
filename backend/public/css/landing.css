@@ -309,10 +309,14 @@ html {
 *:after {
     box-sizing: inherit;
 }
-
+/* //ashi */
 body {
     /* background: #16171b; */
-    background: linear-gradient(to left, #fdfafa, #fffcfc);
+    background: linear-gradient(to left, #ffffff, #fffcfc);
+    background-image: url("https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630");
+     background-repeat: no-repeat;
+     height: 1000px;
+     width: 1000px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
@@ -946,7 +950,7 @@ strong {
 
 .button[disabled] {
     cursor: not-allowed;
-    color: #16171b;
+    color: #f0f0f0;
     background-color: #292b32 !important;
 }
 
@@ -973,13 +977,13 @@ strong {
 }
 
 .button-primary {
-    color: #f9faff;
+    color: #000000;
     /* background-color: #376df9; */
-    background-color: #faf9f9;
+    background-color: #f0f0f0;
 }
 
 .button-primary:hover {
-    background-color: #4678f9;
+    background-color: #05554a;
 }
 
 .button-primary.is-loading::after {
@@ -988,7 +992,7 @@ strong {
 
 .button-custom {
     border: 0;
-    color: #f9faff !important;
+    color: #000000 !important;
     background-color: #000000;
     background: linear-gradient(100deg, #00A36C 0, #ff5fa0 75%, #00A36C 100%);
 }
