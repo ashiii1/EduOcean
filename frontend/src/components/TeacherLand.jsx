@@ -66,16 +66,17 @@ const TeacherLand = () => {
   };
 
   return (
-    <div className="bg-zinc-900 min-h-screen">
-      <nav className="bg-zinc-800 p-4 flex items-center justify-between">
+    <div className="bg-cover bg-center min-h-screen" style={{ backgroundImage: `url('')` }}>
+      
+      <nav className="bg-black p-4 flex items-center justify-between">
         <div className="flex items-center">
-          <div className="h-10 w-10 bg-orange-500 rounded-full mr-4"></div>
+          <div className="h-10 w-10 bg-black rounded-full mr-4"></div>
           <p className="text-white text-xl">
             {teacherName ? `Mr. ${teacherName}` : "Instructor"}
           </p>
         </div>
         <button
-          className="bg-orange-500 text-white hover:bg-orange-700 px-4 py-2 rounded focus:outline-none focus:shadow-outline"
+          className="bg-green-500 text-black hover:bg-gray-500 px-4 py-2 rounded focus:outline-none focus:shadow-outline"
           onClick={handleAddCourse}
         >
           Create Course
@@ -83,15 +84,15 @@ const TeacherLand = () => {
       </nav>
 
       <div className="container mx-auto p-6">
-        <h2 className="text-white text-2xl mb-4">Your Courses</h2>
+        <h2 className="text-black text-2xl mb-4">Your Courses</h2>
         {teacherData.courses.length === 0 ? (
-          <p className="text-white">No courses yet created.</p>
+          <p className="text-black">No courses yet created.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {teacherData.courses.map((course) => (
               <div
                 key={course.id}
-                className="bg-zinc-800 p-4 rounded shadow-md relative h-96"
+                className="bg-zinc-400 p-4 rounded shadow-md relative h-96"
               >
                 <div className="mb-4 h-44 bg-gray-700 rounded">
                   <img
@@ -101,7 +102,7 @@ const TeacherLand = () => {
                   />
                 </div>
 
-                <h3 className="text-white text-lg font-semibold mb-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                <h3 className="text-black text-lg font-semibold mb-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
                   {course.title}
                 </h3>
                 <p className="text-gray-400 overflow-hidden overflow-ellipsis whitespace-nowrap">

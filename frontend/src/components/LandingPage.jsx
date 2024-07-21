@@ -70,7 +70,6 @@
 // export default LandingPage;
 import { Link } from 'react-router-dom';
 import MainNavbar from './MainNavbar';
-import MainFooter from './MainFooter';
 
 const LandingPage = () => {
   return (
@@ -81,10 +80,10 @@ const LandingPage = () => {
           <h1 className="text-3xl md:text-5xl text-center font-bold text-gray-800">Welcome to t course section</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="shadow-lg bg-green-600 rounded-lg p-6 text-white flex flex-col items-center justify-center">
-              <p className="text-xl md:text-3xl font-bold mb-4">Sign in </p>
+              <p className="text-xl md:text-3xl font-bold mb-4">Login </p>
               <Link to="/open-student" className="text-center w-full">
                 <button className="bg-black text-white hover:bg-green-800 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-3/4 lg:w-1/2">
-                  Sign in
+                  Login
                 </button>
               </Link>
             </div>
@@ -99,7 +98,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <MainFooter />
     </div>
   );
 };
