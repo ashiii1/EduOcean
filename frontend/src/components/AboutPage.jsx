@@ -9,7 +9,7 @@ const AboutPage = () => {
       // Set timeout to make content visible after 1 second
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 1000);
+      }, 500);
   
       return () => clearTimeout(timer);
     }, []);

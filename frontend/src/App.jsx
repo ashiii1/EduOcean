@@ -304,7 +304,7 @@ import StudentEnrolled from './components/StudentEnrolled';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import StudentQue from './components/StudentQue';
-import MApp from './App';
+// import MApp from './App';
 
 function App() {
   return (
@@ -321,7 +321,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/student-queries" element={<StudentQue />} />
             <Route path="/admin-panel" element={<StudentQue />} />
-            <Route path="/assessments" element={<MApp />} />
+            {/* <Route path="/assessments" element={<MApp />} /> */}
 
             <Route path="/open-teacher" element={<SignInTeacher />} />
             <Route path="/student-land/:studentId" element={<StudentLand />} />

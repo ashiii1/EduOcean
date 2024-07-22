@@ -27,4 +27,5 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({ code, language }) => {
   )
 }
 
-export default CodeSnippet
+export default CodeSnippet;
+export{}
