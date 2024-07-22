@@ -163,7 +163,7 @@ const StudentEnrolled = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {enrolledCourses.map((course) => (
-            <div key={course.id} className="bg-gray-200 p-4 rounded shadow-md relative h-96">
+            <div key={course.id} className="bg-gray-300 p-4 rounded shadow-md relative h-96">
               {/* Thumbnail */}
               <div className="mb-4 h-44 bg-zinc-700 rounded">
                 <img src={course.coverphoto} alt={course.title} className="h-full w-full object-cover" />
@@ -173,12 +173,12 @@ const StudentEnrolled = () => {
                 {course.title}
               </h3>
               <p className="mb-3 font-normal text-gray-800 dark:text-gray-400">Teacher: {course.teacher.username}</p>
-              <p className="text-gray-400 overflow-hidden overflow-ellipsis whitespace-nowrap">{course.description}</p>
+              <p className="text-black overflow-hidden overflow-ellipsis whitespace-nowrap">{course.description}</p>
 
               <div className="absolute bottom-4 right-4 flex space-x-2">
                 <button
                   onClick={() => goToCourse(course._id)}
-                  className="bg-orange-500 text-white hover:bg-orange-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-black text-white hover:bg-gray-600 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
                 >
                   Start course
                 </button>

@@ -82,17 +82,17 @@ const MainNavbar = () => {
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
   return (
-    <aside className="bg-gray-400 text-black p-4 md:w-64 h-screen fixed left-0 top-0 overflow-y-auto">
-      <div className="flex justify-center my-4">
-        <h2 className="text-white text-2xl">Sidebar</h2>
+    <aside className="bg-gray-800 text-white p-4 md:w-64 h-screen fixed left-0 top-0 overflow-y-auto ">
+      <div className="flex justify-center my-4 ">
+        <h2 className="text-white text-2xl font-semibold">Sidebar</h2>
       </div>
-      <ul className="space-y-4">
+      <ul className="space-y-4 font-sans ">
         <li>
           <NavLink
             to="/"
             exact
             className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-black text-white" : "block px-4 py-2 rounded"
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }
           >
             Home
@@ -102,20 +102,20 @@ const MainNavbar = () => {
           <NavLink
             to="/open-student"
             className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-black text-white" : "block px-4 py-2 rounded"
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }
           >
-            Courses
+            My Courses
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/quiz-landing"
+            to="/assessments"
             className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-black text-white" : "block px-4 py-2 rounded"
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }
           >
-            Quiz
+            Assessments
           </NavLink>
         </li>
         <li>
@@ -126,11 +126,33 @@ const MainNavbar = () => {
             Live Class
           </a>
         </li>
+
         <li>
           <NavLink
             to="/open-student"
             className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-black text-white" : "block px-4 py-2 rounded"
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
+            }
+          >
+            Recording Sessions
+          </NavLink>
+        </li>
+      
+        <li>
+          <NavLink
+            to="/student-queries"
+            className={({ isActive }) => 
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
+            }
+          >
+            Student queries
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/open-student"
+            className={({ isActive }) => 
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }
           >
             Login
@@ -140,10 +162,41 @@ const MainNavbar = () => {
           <NavLink
             to="/register-student"
             className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-black text-white" : "block px-4 py-2 rounded"
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }
           >
             Register
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/register-teacher"
+            className={({ isActive }) => 
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
+            }
+          >
+            Admin Dasoard
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => 
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
+            }
+          >
+            About Page
+          </NavLink>
+        </li> 
+        <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => 
+              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
+            }
+          >
+            Contact Us
           </NavLink>
         </li>
       </ul>
