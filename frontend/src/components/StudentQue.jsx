@@ -51,9 +51,9 @@ const StudentQue = () => {
     setAnswers({ ...answers, [id]: '' });
   };
 
-  const handleDeleteQuestion = (id) => {
-    setQuestions(questions.filter(q => q.id !== id));
-  };
+  // const handleDeleteQuestion = (id) => {
+  //   setQuestions(questions.filter(q => q.id !== id));
+  // };
 
   const handleLikeAnswer = (id) => {
     setQuestions(questions.map(q =>
@@ -124,12 +124,12 @@ const StudentQue = () => {
                     </button>
                   </>
                 )}
-                <button
+                {/* <button
                   onClick={() => handleDeleteQuestion(q.id)}
                   className="bg-red-500 text-white p-2 rounded mt-2"
                 >
                   Delete
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

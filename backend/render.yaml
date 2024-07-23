@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: my-node-app
+    env: node
+    buildCommand: npm install
+    startCommand: node src/app/server.js
+    branch: main
+    region: us
+    plan: starter
+    autoDeploy: true
+    github:
+      repo: your-github-username/your-repo-name
+      branch: main
+    logLevel: info
+    healthCheckPath: /
+    healthCheckInterval: 30s
+    healthCheckTimeout: 10s

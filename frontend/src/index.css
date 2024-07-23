@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(../node_modules/semantic-ui-css/semantic.min.css);
 
 
 /* Add to your global CSS or a CSS module */

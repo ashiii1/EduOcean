@@ -304,9 +304,13 @@ import StudentEnrolled from './components/StudentEnrolled';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import StudentQue from './components/StudentQue';
+import Assessment from './components/Assessment';
+import './index.css'
+
 // import MApp from './App';
 
 function App() {
+
   return (
     <div className="App bg-white">
       <Router>
@@ -331,6 +335,7 @@ function App() {
             <Route path="/see-videos/:courseId" element={<ContentPage />} />
             <Route path="/play-video/:videoUrl" element={<PlayVideo />} />
             <Route path="/enrolled-courses/:studentId" element={<StudentEnrolled />} />
+            <Route path="/assessments" element={<Assessment/>} />
 
             {/* Quiz App Routes */}
        

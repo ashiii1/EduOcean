@@ -1,0 +1,32 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app/src/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "app/src/api/(.*)",
+        "dest": "app/src/api.js"
+      },
+      {
+        "src": "app/src/host/(.*)",
+        "dest": "app/src/host.js"
+      },
+      {
+        "src": "app/src/logs/(.*)",
+        "dest": "app/src/logs.js"
+      },
+      {
+        "src": "app/src/xss/(.*)",
+        "dest": "app/src/xss.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "app/src/server.js"
+      }
+    ]
+  }
+  

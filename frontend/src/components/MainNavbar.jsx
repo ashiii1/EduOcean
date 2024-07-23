@@ -79,7 +79,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const MainNavbar = () => {
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = "https://live-streaming-2.onrender.com";
 
   return (
     <aside className="bg-gray-800 text-white p-4 md:w-64 h-screen fixed left-0 top-0 overflow-y-auto ">

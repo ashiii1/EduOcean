@@ -38,7 +38,9 @@
         "socket.io": "^4.7.5",
         "swagger-ui-express": "^5.0.1",
         "uuid": "10.0.0",
-        "xss": "^1.0.15"
+        "xss": "^1.0.15",
+        "@vercel/node": "^2.0.0"
+
     },
     "devDependencies": {
         "node-fetch": "^3.3.2",

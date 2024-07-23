@@ -24,7 +24,12 @@
     "react-spinners": "^0.13.7",
     "react-toastify": "^9.1.3",
     "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "he": "^1.2.0",
+    "prop-types": "^15.8.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4",
+    "sweetalert2": "^11.7.31"
   },
   "compilerOptions": {
     "types": [
@@ -57,6 +62,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
+    "@types/prismjs": "^1.26.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.34",

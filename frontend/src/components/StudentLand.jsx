@@ -174,12 +174,12 @@
 
 // export default StudentLand;
 import React, { useEffect, useState } from 'react';
-import MainNavbar from './MainNavbar';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import StudentSidebar from './StudentSidebar';
 
 const StudentLand = () => {
   const { studentId } = useParams();
@@ -232,16 +232,15 @@ const StudentLand = () => {
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
-      <MainNavbar />
-      <div className="flex">
+<StudentSidebar/>      <div className="flex">
         <nav className="bg-white w-64 p-4 flex flex-col h-full shadow-lg">
           <div className="mt-20 ml-4 text-lg">
             <p className="block text-black hover:text-gray-500 cursor-pointer" onClick={viewEnrolledCourses}>
               My Courses
             </p>
-            <Link to="/about-us" className="block text-black hover:text-gray-500">
+            {/* <Link to="/about-us" className="block text-black hover:text-gray-500">
               About Us
-            </Link>
+            </Link> */}
           </div>
         </nav>
 
