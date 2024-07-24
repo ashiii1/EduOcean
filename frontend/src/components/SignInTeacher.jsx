@@ -78,7 +78,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const SignInTeacher = () => {
   const [email, setEmail] = useState("");
@@ -146,7 +146,7 @@ const SignInTeacher = () => {
             >
               Sign In
             </button>
-            <p className="mt-4">Don't have an account? <Link to="/register-teacher" className="text-red-500">Register</Link></p>
+            {/* <p className="mt-4">Don't have an account? <Link to="/register-teacher" className="text-red-500">Register</Link></p> */}
 
           </form>
         </div>

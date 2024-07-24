@@ -6,7 +6,7 @@ const CATEGORIES = [
   },
   {
     key: 9,
-    text: 'General Knowledge',
+    text: 'reactjs',
     value: 9,
   },
   {
@@ -79,51 +79,51 @@ const CATEGORIES = [
     text: 'History',
     value: 23,
   },
-  {
-    key: 24,
-    text: 'Politics',
-    value: 24,
-  },
-  {
-    key: 25,
-    text: 'Arts',
-    value: 25,
-  },
-  {
-    key: 26,
-    text: 'Celebrities',
-    value: 26,
-  },
-  {
-    key: 27,
-    text: 'Animals',
-    value: 27,
-  },
-  {
-    key: 28,
-    text: 'Vehicles',
-    value: 28,
-  },
-  {
-    key: 29,
-    text: 'Entertainment: Comics',
-    value: 29,
-  },
-  {
-    key: 30,
-    text: 'Science: Gadgets',
-    value: 30,
-  },
-  {
-    key: 31,
-    text: 'Entertainment: Japanese Anime & Manga',
-    value: 31,
-  },
-  {
-    key: 32,
-    text: 'Entertainment: Cartoon & Animations',
-    value: 32,
-  },
+  // {
+  //   key: 24,
+  //   text: 'Politics',
+  //   value: 24,
+  // },
+  // {
+  //   key: 25,
+  //   text: 'Arts',
+  //   value: 25,
+  // },
+  // {
+  //   key: 26,
+  //   text: 'Celebrities',
+  //   value: 26,
+  // },
+  // {
+  //   key: 27,
+  //   text: 'Animals',
+  //   value: 27,
+  // },
+  // {
+  //   key: 28,
+  //   text: 'Vehicles',
+  //   value: 28,
+  // },
+  // {
+  //   key: 29,
+  //   text: 'Entertainment: Comics',
+  //   value: 29,
+  // },
+  // {
+  //   key: 30,
+  //   text: 'Science: Gadgets',
+  //   value: 30,
+  // },
+  // {
+  //   key: 31,
+  //   text: 'Entertainment: Japanese Anime & Manga',
+  //   value: 31,
+  // },
+  // {
+  //   key: 32,
+  //   text: 'Entertainment: Cartoon & Animations',
+  //   value: 32,
+  // },
 ];
 
 export default CATEGORIES;

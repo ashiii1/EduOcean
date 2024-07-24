@@ -393,13 +393,13 @@
 import React, { useEffect, useState } from 'react';
 import MainNavbar from './MainNavbar';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CoursePage = () => {
   const [courses, setCourses] = useState([]);
-  const [showSidebar, setShowSidebar] = useState(false);
+  // const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -436,38 +436,36 @@ const CoursePage = () => {
     }
   };
 
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
+  // const toggleSidebar = () => {
+  //   setShowSidebar(!showSidebar);
+  // };
 
-  const closeSidebar = () => {
-    setShowSidebar(false);
-  };
+  // const closeSidebar = () => {
+  //   setShowSidebar(false);
+  // };
 
   return (
+    
     <div className="bg-white min-h-screen flex flex-col">
       <MainNavbar />
+     
       <div className="flex">
         <nav className="bg-white w-64 p-4 flex flex-col h-full shadow-lg">
-          <div className="mt-20 ml-4 text-lg">
-            <Link to="/about-us" className="block text-black hover:text-gray-500">
-              About Us
-            </Link>
-          </div>
+         
         </nav>
 
-        <div className="flex-1 flex flex-col p-6">
-          <nav className="bg-white p-4 flex items-center justify-between">
+         <div className="flex-1 flex flex-col p-6 pt-0">
+          
+          {/* <nav className="bg-white p-4 flex items-center justify-between">
             <div className="lg:hidden">
-              <button className="text-black focus:outline-none" onClick={toggleSidebar}>
-                <svg
+              {/* <button className="text-black focus:outline-none" onClick={toggleSidebar}> 
+                {/* <svg
                   className="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
+                >                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
@@ -476,7 +474,7 @@ const CoursePage = () => {
                 </svg>
               </button>
             </div>
-            <div className={`lg:hidden fixed top-0 right-0 h-96 w-64 bg-white transform ${showSidebar ? 'translate-x-0' : 'translate-x-full'} transition-transform ease-in-out duration-300`}>
+            <div className={`lg:hidden fixed top-0 right-0 h-96 w-64 bg-white transform transition-transform ease-in-out duration-300`}>
               <div className="p-4 flex justify-between items-center">
                 <div className="mt-20 ml-4 text-lg">
                   <Link to="/about-us" className="block text-black hover:text-gray-500">
@@ -498,20 +496,19 @@ const CoursePage = () => {
                       d="M6 18L18 6M6 6l12 12"
                     ></path>
                   </svg>
-                </button>
+                </button> 
               </div>
             </div>
-          </nav>
+          </nav> 
+ */}
 
-          <div className="card rounded-md shadow-lg shadow-gray-500 bg-gray-100 p-30 mb-20 flex flex-col items-center xl:flex-row xl:justify-between">
-            <div className="xl:2/3 w-full xl:mb-5 mb-5">
-              <h2 className="text-black xl:-ml-0 md:text-xl sm:text-md xl:text-3xl mb-0 text-center">Explore the Trending Courses</h2>
-              <p className="text-black md:text-md sm:text-32 xl:text-xl text-center p-5">
-                Welcome to our Learning Management System dashboard! Your gateway to a world of knowledge awaits.
+          
+          <div className="w-full mb-6 ">
+            <img src="/final.png" alt="LMS Banner" className="w-full h-auto object-cover rounded m-0 top-0"  style={{ margin: 0, padding: 0 }} />
+          </div>
+          <p className="text-black md:text-md sm:text-32 xl:text-3xl text-center p-12 font-bold">
+                Free course to enroll
               </p>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 mb-10">
             {courses.map((course) => (
               <div key={course.id} className="bg-gray-300 p-4 rounded shadow-md relative flex flex-col h-80 cursor-pointer overflow-hidden transform transition-transform hover:scale-105 hover:bg-gray-700 hover:text-white">
@@ -533,7 +530,9 @@ const CoursePage = () => {
               </div>
             ))}
           </div>
-
+          <p className="text-black md:text-md sm:text-32 xl:text-3xl text-center p-12 font-bold">
+               Paid course 
+              </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 mb-10">
             {courses.map((course) => (
               <div key={course.id} className="bg-gray-300 p-4 rounded shadow-md relative flex flex-col h-80 cursor-pointer overflow-hidden transform transition-transform hover:scale-105 hover:bg-gray-700 hover:text-white">
@@ -555,7 +554,10 @@ const CoursePage = () => {
               </div>
             ))}
           </div>
+          <p className="text-black md:text-md sm:text-32 xl:text-3xl text-center p-12 font-bold">
 
+            DSA course enroll once get full section free
+              </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 mb-10">
             {courses.map((course) => (
               <div key={course.id} className="bg-gray-300 p-4 rounded shadow-md relative flex flex-col h-80 cursor-pointer overflow-hidden transform transition-transform hover:scale-105 hover:bg-gray-700 hover:text-white">

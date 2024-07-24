@@ -86,7 +86,7 @@ const MainNavbar = () => {
       <div className="flex justify-center my-4 ">
         <h2 className="text-white text-2xl font-semibold">Sidebar</h2>
       </div>
-      <ul className="space-y-4 font-sans ">
+      <ul className="space-y-4 font-sans text-2xl">
         <li>
           <NavLink
             to="/"
@@ -134,7 +134,7 @@ const MainNavbar = () => {
               isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }
           >
-            Recording Sessions
+            Recordings
           </NavLink>
         </li>
       
@@ -170,7 +170,7 @@ const MainNavbar = () => {
         </li>
         <li>
           <NavLink
-            to="/register-teacher"
+            to="/open-teacher"
             className={({ isActive }) => 
               isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
             }

@@ -299,7 +299,7 @@ import TeacherLand from './components/TeacherLand';
 import CreateCourse from './components/CreateCourse';
 import CoursePage from './components/CoursePage';
 import ContentPage from './components/ContentPage';
-import PlayVideo from './components/PlayVidoe';
+// import PlayVideo from './components/PlayVidoe';
 import StudentEnrolled from './components/StudentEnrolled';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
@@ -333,7 +333,7 @@ function App() {
             <Route path="/course-create/:teacherId" element={<CreateCourse />} />
             <Route path="/video-page/:courseId" element={<CoursePage />} />
             <Route path="/see-videos/:courseId" element={<ContentPage />} />
-            <Route path="/play-video/:videoUrl" element={<PlayVideo />} />
+            {/* <Route path="/play-video/:videoUrl" element={<PlayVideo />} /> */}
             <Route path="/enrolled-courses/:studentId" element={<StudentEnrolled />} />
             <Route path="/assessments" element={<Assessment/>} />
 

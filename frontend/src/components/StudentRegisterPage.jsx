@@ -159,7 +159,7 @@ const StudentRegisterPage = () => {
   };
 
   return (
-<div className="flex items-center justify-center min-h-screen bg-white p-6 w-full" style={{ backgroundImage: "url('https://www.creativefabrica.com/wp-content/uploads/2023/01/14/Floral-Frame-Background-Graphics-57610572-1.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+<div className="flex items-center justify-center min-h-screen bg-white p-6 w-full" style={{ backgroundImage: "url('https://i5.walmartimages.com/asr/e21ceefb-6299-4864-9652-0abbac0e7797_1.f6e16f75b5e5d302e81c5902d0e0f186.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
 <div className="card shadow-2xl h-1/2 md:w-1/2 xl:w-1/3 bg-white">
         <div className="form-container p-6">
           <div className="form student-form">
@@ -187,7 +187,7 @@ const StudentRegisterPage = () => {
                 value={studentPass} 
               />
               <button 
-                className="bg-green-600 text-black hover:bg-green-800 hover:text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-64"
+                className="bg-black text-white hover:bg-gray-500 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-64"
                 type="submit"
                 disabled={loading}
               >

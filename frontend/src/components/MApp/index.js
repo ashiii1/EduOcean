@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-import Layout from '../Layout';
+// import Layout from '../Layout';
 import Loader from '../Loader';
 import Main from '../Main';
 import Quiz from '../Quiz';
 import Result from '../Result';
+import MainNavbar from '../MainNavbar'
 
 import { shuffle } from '../../utils';
 
@@ -87,7 +88,9 @@ const MApp = () => {
   };
 
   return (
-    <Layout>
+    <>
+    {/* // <Layout> */}
+      <MainNavbar/>
       {loading && <Loader {...loadingMessage} />}
       {!loading && !isQuizStarted && !isQuizCompleted && (
         <Main startQuiz={startQuiz} />
@@ -98,7 +101,8 @@ const MApp = () => {
       {!loading && isQuizCompleted && (
         <Result {...resultData} replayQuiz={replayQuiz} resetQuiz={resetQuiz} />
       )}
-    </Layout>
+    {/* // </Layout> */}
+    </>
   );
 };
 

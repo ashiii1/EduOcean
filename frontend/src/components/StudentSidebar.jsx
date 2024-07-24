@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 const StudentSidebar = () => {
     return (
         <aside className="bg-gray-800 text-white p-4 md:w-64 h-screen fixed left-0 top-0 overflow-y-auto ">
-          <div className="flex justify-center my-4 ">
-            <h2 className="text-white text-2xl font-semibold">Sidebar</h2>
+          <div className="flex justify-center my-4 p-5 ">
+            <h2 className="text-white text-3xl font-semibold">Sidebar</h2>
           </div>
-          <ul className="space-y-4 font-sans ">
+          <ul className="space-y-4 font-sans pb-10 text-2xl ">
             <li>
               <NavLink
                 to="/"
@@ -39,7 +39,7 @@ const StudentSidebar = () => {
                   isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
                 }
               >
-                Recording Sessions
+                Recordings
               </NavLink>
             </li>
           

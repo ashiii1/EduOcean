@@ -20,6 +20,7 @@ const Result = ({
   };
 
   return (
+    <div className='p-36 w-[2200px]'>
     <Container>
       <Menu fluid widths={2}>
         <Menu.Item
@@ -28,6 +29,7 @@ const Result = ({
           onClick={handleTabClick}
         />
         <Menu.Item
+        
           name="QNA"
           active={activeTab === 'QNA'}
           onClick={handleTabClick}
@@ -35,6 +37,7 @@ const Result = ({
       </Menu>
       {activeTab === 'Stats' && (
         <Stats
+        
           totalQuestions={totalQuestions}
           correctAnswers={correctAnswers}
           timeTaken={timeTaken}
@@ -45,6 +48,7 @@ const Result = ({
       {activeTab === 'QNA' && <QNA questionsAndAnswers={questionsAndAnswers} />}
       <br />
     </Container>
+    </div>
   );
 };
 
