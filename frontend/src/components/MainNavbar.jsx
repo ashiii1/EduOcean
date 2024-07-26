@@ -5,7 +5,7 @@
 //   return (
 //     <nav className="bg-blue-500 p-4">
 //       <ul className="flex justify-around">
-//         <li><Link to="/" className="text-white">Home</Link></li>
+//         <li className='pb-5'><Link to="/" className="text-white">Home</Link></li>
 //         <li><Link to="/about" className="text-white">About</Link></li>
 //         <li><Link to="/services" className="text-white">Services</Link></li>
 //         <li><Link to="/contact" className="text-white">Contact</Link></li>
@@ -79,122 +79,112 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const MainNavbar = () => {
+  // const backendUrl = "https://live-streaming-2.onrender.com";
   const backendUrl = "https://live-streaming-2.onrender.com";
+
 
   return (
     <aside className="bg-gray-800 text-white p-4 md:w-64 h-screen fixed left-0 top-0 overflow-y-auto ">
-      <div className="flex justify-center my-4 ">
+      <div className="flex justify-center my-4 mb-14">
         <h2 className="text-white text-2xl font-semibold">Sidebar</h2>
       </div>
-      <ul className="space-y-4 font-sans text-2xl">
-        <li>
+      <ul className="space-y-4 font-sans text-2xl mb-7">
+        <li className='pb-5'>
           <NavLink
             to="/"
             exact
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded  w-full"
           >
             Home
           </NavLink>
         </li>
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/open-student"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             My Courses
           </NavLink>
         </li>
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/assessments"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className="text-white hover:bg-white hover:text-black px-4 py-2 rounded w-full"
           >
             Assessments
           </NavLink>
         </li>
-        <li>
+        <li className='pb-5'>
           <a
             href={`${backendUrl}`}
-            className="block px-4 py-2 rounded"
+            className="text-white hover:bg-white hover:text-black px-4 py-2 rounded w-full"
           >
             Live Class
           </a>
         </li>
 
-        <li>
+        <li className='pb-5'>
           <NavLink
-            to="/open-student"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            to="/"
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             Recordings
           </NavLink>
         </li>
+        <li className='pb-5'>
+          <NavLink
+            to="/contest"
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-4 w-full"
+          >
+            Weekly Contest
+          </NavLink>
+        </li>
       
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/student-queries"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white  hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             Student queries
           </NavLink>
         </li>
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/open-student"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             Login
           </NavLink>
         </li>
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/register-student"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             Register
           </NavLink>
         </li>
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/open-teacher"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             Admin Dasoard
           </NavLink>
         </li>
 
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/about"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white hover:text-black px-4 py-2 rounded mb-8 w-full "
           >
             About Page
           </NavLink>
         </li> 
-        <li>
+        <li className='pb-5'>
           <NavLink
             to="/contact"
-            className={({ isActive }) => 
-              isActive ? "block px-4 py-2 rounded bg-white text-black" : "block px-4 py-2 rounded"
-            }
+            className=" text-white hover:bg-white  hover:text-black px-4 py-2 rounded mb-4 w-full"
           >
             Contact Us
           </NavLink>

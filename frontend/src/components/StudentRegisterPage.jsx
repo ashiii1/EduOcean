@@ -144,7 +144,9 @@ const StudentRegisterPage = () => {
     };
 
     try {
-      const res = await axios.post("https://lmsdatabase.onrender.com/student_add", data);
+      // const res = await axios.post("https://lmsdatabase.onrender.com/student_add", data);
+      const res = await axios.post("https://lms-backend-1-l5v8.onrender.com/student_add", data);
+
       if (res.status === 201) {
         alert("Student registered successfully!");
         navigate("/open-student"); // Redirect to login page

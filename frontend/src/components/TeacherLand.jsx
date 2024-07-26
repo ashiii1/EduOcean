@@ -1,8 +1,163 @@
+// // import React, { useState, useEffect } from "react";
+// // import { useNavigate, useParams } from "react-router-dom";
+// // import axios from "axios";
+// // import { toast, ToastContainer } from "react-toastify";
+// // import "react-toastify/dist/ReactToastify.css";
+// // import TeacherSidebar from "./TeacherSidebar";
+
+// // const TeacherLand = () => {
+// //   const { teacherId } = useParams();
+// //   const [teacherName, setTeacherName] = useState("");
+// //   const [teacherData, setTeacherData] = useState({
+// //     name: "",
+// //     courses: [],
+// //   });
+
+// //   const fetchTeacherData = async () => {
+// //     try {
+// //       const response = await axios.get(
+// //         // `https://lmsdatabase.onrender.com/getTeacherData/${teacherId}`
+// //         `https://lms-backend-1-l5v8.onrender.com/getTeacherData/${teacherId}`
+
+// //       );
+// //       setTeacherName(response.data.name);
+// //       setTeacherData({
+// //         name: response.data.name,
+// //         courses: response.data.courses,
+// //       });
+// //       console.log('Teacher Courses:', response.data.courses);
+// //     } catch (error) {
+// //       console.error("Error fetching teacher data", error);
+// //     }
+// //   };
+
+// //   useEffect(() => {
+// //     fetchTeacherData();
+    
+// //   },[teacherId]);
+
+// //   const navigate = useNavigate();
+
+// //   const handleAddCourse = () => {
+// //     navigate(`/course-create/${teacherId}`);
+// //   };
+
+// //   const handleViewNotes = (courseId) => {
+// //     // Your existing code for viewing notes
+// //   };
+
+// //   const handleSeeVideos = (courseId) => {
+// //     navigate(`/see-videos/${courseId}`);
+// //   };
+
+// //   const handleAddVideo = (courseId) => {
+// //     navigate(`/video-page/${courseId}`);
+// //   };
+
+// //   const handleDeleteCourse = async (courseId) => {
+// //     try {
+// //       await axios.delete(`https://lmsdatabase.onrender.com/deleteCourse/${teacherId}/${courseId}`);
+// //       // After successful deletion, show success toast
+// //       toast.success("Course deleted successfully");
+// //       // Reload the teacher data after deletion
+// //       fetchTeacherData(); // Fetch updated teacher data
+// //     } catch (error) {
+// //       // If deletion fails, show an error toast
+// //       toast.error("Error deleting course");
+// //       console.error("Error deleting course", error);
+// //     }
+// //   };
+
+// //   return (
+// //     <div className="bg-cover bg-center min-h-screen" style={{ backgroundImage: `url('')` }}>
+// //       <TeacherSidebar/>
+// //       <nav className="bg-black p-4 flex items-center justify-between">
+// //         <div className="flex items-center">
+// //           <div className="h-10 w-10 bg-black rounded-full mr-4"></div>
+// //           <p className="text-white text-xl">
+// //             {teacherName ? `Mr. ${teacherName}` : "Instructor"}
+// //           </p>
+// //         </div>
+// //         <button
+// //           className="bg-green-500 text-black hover:bg-gray-500 px-4 py-2 rounded focus:outline-none focus:shadow-outline"
+// //           onClick={handleAddCourse}
+// //         >
+// //           Create Course
+// //         </button>
+// //       </nav>
+
+// //       <div className="container mx-auto p-6">
+// //         <h2 className="text-black text-2xl mb-4">Your Courses</h2>
+// //         {teacherData.courses.length === 0 ? (
+// //           <p className="text-black">No courses yet created.</p>
+// //         ) : (
+// //           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+// //             {teacherData.courses.map((course) => (
+// //               <div
+// //                 key={course.id}
+// //                 className="bg-zinc-400 p-4 rounded shadow-md relative h-96"
+// //               >
+// //                 <div className="mb-4 h-44 bg-gray-700 rounded">
+// //                   <img
+// //                     src={course.coverphoto}
+// //                     alt="Course Thumbnail"
+// //                     className="w-full h-full object-cover rounded"
+// //                   />
+// //                 </div>
+
+// //                 <h3 className="text-black text-lg font-semibold mb-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+// //                   {course.title}
+// //                 </h3>
+// //                 <p className="text-gray-400 overflow-hidden overflow-ellipsis whitespace-nowrap">
+// //                   {course.description}
+// //                 </p>
+
+// //                 <div className="absolute bottom-4 right-4 flex space-x-2">
+// //                   <button
+// //                     className="bg-green-500 text-white hover:bg-green-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+// //                     onClick={() => handleAddVideo(course.id)}
+// //                   >
+// //                     Add Video
+// //                   </button>
+// //                   <button
+// //                     className="bg-blue-500 text-white hover:bg-blue-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+// //                     onClick={() => handleViewNotes(course.id)}
+// //                   >
+// //                     Notes
+// //                   </button>
+// //                   <button
+// //                     className="bg-orange-500 text-white hover:bg-orange-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+// //                     onClick={() => handleSeeVideos(course.id)}
+// //                   >
+// //                     See Videos
+// //                   </button>
+// //                   <button
+// //                     className="bg-red-500 text-white hover:bg-red-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+// //                     onClick={() => handleDeleteCourse(course.id)}
+// //                   >
+// //                     Delete
+// //                   </button>
+// //                 </div>
+// //               </div>
+// //             ))}
+// //           </div>
+// //         )}
+// //       </div>
+
+// //       {/* Toast container */}
+// //       <ToastContainer />
+// //     </div>
+// //   );
+// // };
+
+// // export default TeacherLand;
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TeacherSidebar from "./TeacherSidebar";
 
 const TeacherLand = () => {
   const { teacherId } = useParams();
@@ -15,7 +170,7 @@ const TeacherLand = () => {
   const fetchTeacherData = async () => {
     try {
       const response = await axios.get(
-        `https://lmsdatabase.onrender.com/getTeacherData/${teacherId}`
+        `https://lms-backend-1-l5v8.onrender.com/getTeacherData/${teacherId}`
       );
       setTeacherName(response.data.name);
       setTeacherData({
@@ -30,8 +185,7 @@ const TeacherLand = () => {
 
   useEffect(() => {
     fetchTeacherData();
-    
-  },[teacherId]);
+  }, [teacherId]);
 
   const navigate = useNavigate();
 
@@ -54,95 +208,92 @@ const TeacherLand = () => {
   const handleDeleteCourse = async (courseId) => {
     try {
       await axios.delete(`https://lmsdatabase.onrender.com/deleteCourse/${teacherId}/${courseId}`);
-      // After successful deletion, show success toast
       toast.success("Course deleted successfully");
-      // Reload the teacher data after deletion
       fetchTeacherData(); // Fetch updated teacher data
     } catch (error) {
-      // If deletion fails, show an error toast
       toast.error("Error deleting course");
       console.error("Error deleting course", error);
     }
   };
 
   return (
-    <div className="bg-cover bg-center min-h-screen" style={{ backgroundImage: `url('')` }}>
-      
-      <nav className="bg-black p-4 flex items-center justify-between">
-        <div className="flex items-center">
-          <div className="h-10 w-10 bg-black rounded-full mr-4"></div>
-          <p className="text-white text-xl">
-            {teacherName ? `Mr. ${teacherName}` : "Instructor"}
-          </p>
-        </div>
-        <button
+    <div className="flex">
+      <TeacherSidebar />
+      <div className="flex-1 ml-64 bg-cover bg-center min-h-screen" style={{ backgroundImage: `url('')` }}>
+        <nav className="bg-gray-800 p-4 flex items-center justify-between">
+          <div className="flex items-center">
+            <p className="text-white text-xl">
+              {teacherName ? `Mr. ${teacherName}` : "Instructor"}
+            </p>
+          </div>
+          <button
           className="bg-green-500 text-black hover:bg-gray-500 px-4 py-2 rounded focus:outline-none focus:shadow-outline"
           onClick={handleAddCourse}
         >
           Create Course
-        </button>
-      </nav>
+         </button>
+        </nav>
 
-      <div className="container mx-auto p-6">
-        <h2 className="text-black text-2xl mb-4">Your Courses</h2>
-        {teacherData.courses.length === 0 ? (
-          <p className="text-black">No courses yet created.</p>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {teacherData.courses.map((course) => (
-              <div
-                key={course.id}
-                className="bg-zinc-400 p-4 rounded shadow-md relative h-96"
-              >
-                <div className="mb-4 h-44 bg-gray-700 rounded">
-                  <img
-                    src={course.coverphoto}
-                    alt="Course Thumbnail"
-                    className="w-full h-full object-cover rounded"
-                  />
+        <div className="container mx-auto p-6">
+          <h2 className="text-black text-2xl mb-4">Your Courses</h2>
+          {teacherData.courses.length === 0 ? (
+            <p className="text-black">No courses yet created.</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {teacherData.courses.map((course) => (
+                <div
+                  key={course.id}
+                  className="bg-zinc-400 p-4 rounded shadow-md relative h-96"
+                >
+                  <div className="mb-4 h-44 bg-gray-700 rounded">
+                    <img
+                      src={course.coverphoto}
+                      alt="Course Thumbnail"
+                      className="w-full h-full object-cover rounded"
+                    />
+                  </div>
+
+                  <h3 className="text-black text-lg font-semibold mb-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                    {course.title}
+                  </h3>
+                  <p className="text-gray-400 overflow-hidden overflow-ellipsis whitespace-nowrap">
+                    {course.description}
+                  </p>
+
+                  <div className="absolute bottom-4 right-4 flex space-x-2">
+                    <button
+                      className="bg-green-500 text-white hover:bg-green-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+                      onClick={() => handleAddVideo(course.id)}
+                    >
+                      Add Video
+                    </button>
+                    <button
+                      className="bg-blue-500 text-white hover:bg-blue-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+                      onClick={() => handleViewNotes(course.id)}
+                    >
+                      Notes
+                    </button>
+                    <button
+                      className="bg-orange-500 text-white hover:bg-orange-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+                      onClick={() => handleSeeVideos(course.id)}
+                    >
+                      See Videos
+                    </button>
+                    <button
+                      className="bg-red-500 text-white hover:bg-red-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
+                      onClick={() => handleDeleteCourse(course.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
+              ))}
+            </div>
+          )}
+        </div>
 
-                <h3 className="text-black text-lg font-semibold mb-2 overflow-hidden overflow-ellipsis whitespace-nowrap">
-                  {course.title}
-                </h3>
-                <p className="text-gray-400 overflow-hidden overflow-ellipsis whitespace-nowrap">
-                  {course.description}
-                </p>
-
-                <div className="absolute bottom-4 right-4 flex space-x-2">
-                  <button
-                    className="bg-green-500 text-white hover:bg-green-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
-                    onClick={() => handleAddVideo(course.id)}
-                  >
-                    Add Video
-                  </button>
-                  <button
-                    className="bg-blue-500 text-white hover:bg-blue-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
-                    onClick={() => handleViewNotes(course.id)}
-                  >
-                    Notes
-                  </button>
-                  <button
-                    className="bg-orange-500 text-white hover:bg-orange-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
-                    onClick={() => handleSeeVideos(course.id)}
-                  >
-                    See Videos
-                  </button>
-                  <button
-                    className="bg-red-500 text-white hover:bg-red-700 px-2 py-1 rounded focus:outline-none focus:shadow-outline"
-                    onClick={() => handleDeleteCourse(course.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        <ToastContainer />
       </div>
-
-      {/* Toast container */}
-      <ToastContainer />
     </div>
   );
 };

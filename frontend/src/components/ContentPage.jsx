@@ -334,7 +334,9 @@ function ContentPage() {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const response = await axios.get(`https://lmsdatabase.onrender.com/getCourseDetails/${courseId}`);
+        // const response = await axios.get(`https://lmsdatabase.onrender.com/getCourseDetails/${courseId}`);
+                const response = await axios.get(`https://lms-backend-1-l5v8.onrender.com/getCourseDetails/${courseId}`);
+
         setCourseDetails(response.data);
         if (response.data.videos.length > 0) {
           const initialVideoUrl = response.data.videos[0]?.url;
@@ -411,15 +413,13 @@ function ContentPage() {
 
       {/* Main Content */}
       <div className="w-full md:w-3/4 p-4 flex flex-col">
-        <div className="card shadow-md bg-gray-800 p-4 top-0 xl:p-6 rounded-xl mb-4">
           <div className="flex flex-col md:flex-row">
             {/* Course Details */}
             <div className="md:w-1/3 mb-4 md:mb-0">
-              <h2 className="text-xl text-white font-semibold mb-4">{courseDetails.title}</h2>
+              <h2 className="text-xl text-black font-semibold mb-4">{courseDetails.title}</h2>
               <p className="text-white">{courseDetails.description}</p>
             </div>
-          </div>
-        </div>
+                  </div>
 
         {/* Video Player */}
         {selectedVideoUrl && (

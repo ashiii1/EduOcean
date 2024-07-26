@@ -92,7 +92,9 @@ const SignInTeacher = () => {
       // Show loading toast to inform user
       toast.info("Signing in...");
 
-      const response = await axios.post('https://lmsdatabase.onrender.com/teacher_login', {
+      // const response = await axios.post('https://lmsdatabase.onrender.com/teacher_login', {
+        const response = await axios.post('https://lms-backend-1-l5v8.onrender.com/teacher_login', {
+
         email,
         password,
       });

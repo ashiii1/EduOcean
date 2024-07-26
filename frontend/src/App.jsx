@@ -306,6 +306,9 @@ import ContactPage from './components/ContactPage';
 import StudentQue from './components/StudentQue';
 import Assessment from './components/Assessment';
 import './index.css'
+import WeeklyContest from './components/WeeklyContest';
+import RecordingList from './components/RecordingList';
+import StudentHome from './components/StudentHome';
 
 // import MApp from './App';
 
@@ -336,6 +339,11 @@ function App() {
             {/* <Route path="/play-video/:videoUrl" element={<PlayVideo />} /> */}
             <Route path="/enrolled-courses/:studentId" element={<StudentEnrolled />} />
             <Route path="/assessments" element={<Assessment/>} />
+            <Route path="/contest" element={<WeeklyContest/>} />
+            <Route path="/recordings" element={<RecordingList/>} />
+            <Route path="/student-land/:studentId/studenthome" element={<StudentHome/>} />
+
+
 
             {/* Quiz App Routes */}
        

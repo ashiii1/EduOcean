@@ -49,36 +49,36 @@ const CATEGORIES = [
     text: 'Science & Nature',
     value: 17,
   },
-  {
-    key: 18,
-    text: 'Science: Computers',
-    value: 18,
-  },
-  {
-    key: 19,
-    text: 'Science: Mathematics',
-    value: 19,
-  },
-  {
-    key: 20,
-    text: 'Mythology',
-    value: 20,
-  },
-  {
-    key: 21,
-    text: 'Sports',
-    value: 21,
-  },
-  {
-    key: 22,
-    text: 'Geography',
-    value: 22,
-  },
-  {
-    key: 23,
-    text: 'History',
-    value: 23,
-  },
+  // {
+  //   key: 18,
+  //   text: 'Science: Computers',
+  //   value: 18,
+  // },
+  // {
+  //   key: 19,
+  //   text: 'Science: Mathematics',
+  //   value: 19,
+  // },
+  // {
+  //   key: 20,
+  //   text: 'Mythology',
+  //   value: 20,
+  // },
+  // {
+  //   key: 21,
+  //   text: 'Sports',
+  //   value: 21,
+  // },
+  // {
+  //   key: 22,
+  //   text: 'Geography',
+  //   value: 22,
+  // },
+  // {
+  //   key: 23,
+  //   text: 'History',
+  //   value: 23,
+  // },
   // {
   //   key: 24,
   //   text: 'Politics',

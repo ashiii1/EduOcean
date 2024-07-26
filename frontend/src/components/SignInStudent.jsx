@@ -88,7 +88,9 @@ const SignInStudent = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://lmsdatabase.onrender.com/student_login', {
+      // const response = await axios.post('https://lmsdatabase.onrender.com/student_login', {
+        const response = await axios.post('https://lms-backend-1-l5v8.onrender.com/student_login', {
+
         email,
         password,
       });

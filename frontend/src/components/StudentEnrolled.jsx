@@ -109,11 +109,15 @@ const StudentEnrolled = () => {
     const fetchData = async () => {
       try {
         // Fetch student data
-        const studentResponse = await axios.get(`https://lmsdatabase.onrender.com/getStudentData/${studentId}`);
+        // const studentResponse = await axios.get(`https://lmsdatabase.onrender.com/getStudentData/${studentId}`);
+        const studentResponse = await axios.get(`https://lms-backend-1-l5v8.onrender.com/getStudentData/${studentId}`);
+
         setStudent(studentResponse.data);
 
         // Fetch enrolled courses
-        const enrolledCoursesResponse = await axios.get(`https://lmsdatabase.onrender.com/enrolled-courses/${studentId}`);
+        // const enrolledCoursesResponse = await axios.get(`https://lmsdatabase.onrender.com/enrolled-courses/${studentId}`);
+        const enrolledCoursesResponse = await axios.get(`https://lms-backend-1-l5v8.onrender.com/enrolled-courses/${studentId}`);
+
         setEnrolledCourses(enrolledCoursesResponse.data);
       } catch (error) {
         console.error('Error fetching data', error);
@@ -132,7 +136,9 @@ const StudentEnrolled = () => {
   const deleteCourse = async (courseId) => {
     try {
       // Make a DELETE request to the server endpoint
-      await axios.delete(`https://lmsdatabase.onrender.com/delete-enrolled-course/${studentId}/${courseId}`);
+      // await axios.delete(`https://lmsdatabase.onrender.com/delete-enrolled-course/${studentId}/${courseId}`);
+      await axios.delete(`https://lms-backend-1-l5v8.onrender.com/delete-enrolled-course/${studentId}/${courseId}`);
+
 
       // After successful deletion, update the state to reflect the changes
       setEnrolledCourses((prevCourses) => prevCourses.filter((course) => course._id !== courseId));

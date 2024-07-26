@@ -30,7 +30,9 @@ const RegisterPage = () => {
             highestQualification: teacherqualification,
         };
     
-        axios.post("https://lmsdatabase.onrender.com/teacher_add", data)
+        // axios.post("https://lmsdatabase.onrender.com/teacher_add", data)
+        axios.post("https://lms-backend-1-l5v8.onrender.com/teacher_add", data)
+
           .then((res) => {
             if (res.status === 201) {
             } else {
