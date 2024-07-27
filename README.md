@@ -1,7 +1,7 @@
 Excited to introduce our cutting-edge Learning Management System (LMS) platform
 Our LMS offers a comprehensive suite of features designed to enhance the educational experience for both students and educators:
 
-![Watch the video](![Screenshot 2024-07-27 185602](https://github.com/user-attachments/assets/bb32c0a5-5890-4383-a6f5-cc3b944122a2))
+![Screenshot 2024-07-27 185602](https://github.com/user-attachments/assets/bb32c0a5-5890-4383-a6f5-cc3b944122a2)
 
 watch this youtube video for detailed information
 https://youtu.be/vzPIoJH2pOQ?si=glV2YYtRJmMJfKT1
