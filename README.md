@@ -1,8 +1,10 @@
 Excited to introduce our cutting-edge Learning Management System (LMS) platform
 Our LMS offers a comprehensive suite of features designed to enhance the educational experience for both students and educators:
 
-![Watch the video](https://github.com/ashiii1/EduOcean/blob/master/contentstudio-video_7pqgBoWu.mp4)
+![Watch the video](![Screenshot 2024-07-27 185602](https://github.com/user-attachments/assets/bb32c0a5-5890-4383-a6f5-cc3b944122a2))
 
+watch this youtube video for detailed information
+https://youtu.be/vzPIoJH2pOQ?si=glV2YYtRJmMJfKT1
 
 Courses (Paid and Free): Access a variety of courses tailored to your needs, available in both paid and free formats.
 Admin Capabilities: Effortlessly manage the platform with tools to add and delete courses, upload videos and assessments, and view user data.
