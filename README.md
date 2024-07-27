@@ -1,6 +1,9 @@
 Excited to introduce our cutting-edge Learning Management System (LMS) platform
 Our LMS offers a comprehensive suite of features designed to enhance the educational experience for both students and educators:
 
+
+https://github.com/ashiii1/EduOcean/blob/master/contentstudio-video_7pqgBoWu.mp4
+
 Courses (Paid and Free): Access a variety of courses tailored to your needs, available in both paid and free formats.
 Admin Capabilities: Effortlessly manage the platform with tools to add and delete courses, upload videos and assessments, and view user data.
 Student Login/Register: Students can easily enroll in courses, access their enrolled content, and manage their course list.
@@ -10,7 +13,6 @@ Student Queries: Ask questions, like and respond to others' questions, and foste
 About Page: Get detailed information about our faculty, overall enrolled data, and platform impressions.
 Contact Us Page: Easily reach us via email, phone, social media links, and our physical address.
 
-[![Watch the video]()
 
 ## Features
 - **Live Streaming Classes**: Engage in real-time classes with live video streaming.
