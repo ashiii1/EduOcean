@@ -1,5 +1,16 @@
-Our LMS platform offers comprehensive online courses with live streaming classes, interactive chat, screen sharing, whiteboard, and camera/mic toggle, customizable themes, a wide range of courses from basics to advanced levels, assessments with certificates, a student help community, and recorded live classes accessible anytime.
+Excited to introduce our cutting-edge Learning Management System (LMS) platform
+Our LMS offers a comprehensive suite of features designed to enhance the educational experience for both students and educators:
 
+Courses (Paid and Free): Access a variety of courses tailored to your needs, available in both paid and free formats.
+Admin Capabilities: Effortlessly manage the platform with tools to add and delete courses, upload videos and assessments, and view user data.
+Student Login/Register: Students can easily enroll in courses, access their enrolled content, and manage their course list.
+Live Classes: Engage in live classes with video, audio, hand raise, mute control, messaging, emoji reactions, pinning participants, room sharing, lock room features, image/pdf link sharing, feedback, screen sharing, and a whiteboard.
+Assessments: Create and participate in assessments with customizable categories, question counts, difficulty levels, countdown timers, and real-time answer checking.
+Student Queries: Ask questions, like and respond to others' questions, and foster a collaborative learning environment.
+About Page: Get detailed information about our faculty, overall enrolled data, and platform impressions.
+Contact Us Page: Easily reach us via email, phone, social media links, and our physical address.
+
+[![Watch the video]()
 
 ## Features
 - **Live Streaming Classes**: Engage in real-time classes with live video streaming.
