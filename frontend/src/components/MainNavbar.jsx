@@ -80,7 +80,7 @@ import { NavLink } from 'react-router-dom';
 
 const MainNavbar = () => {
   // const backendUrl = "https://live-streaming-2.onrender.com";
-  const backendUrl = "https://live-streaming-2.onrender.com";
+  const backendUrl = "https://live-streaming-1-vhlq.onrender.com/";
 
 
   return (
